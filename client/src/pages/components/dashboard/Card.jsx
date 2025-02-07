@@ -52,7 +52,7 @@ const Card = (props) => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "auth-token": `${import.meta.env.VITE_AUTH_TOKEN}`
+          "auth-token": token
         }
       })
   
