@@ -1,0 +1,1056 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Power Tools",
+            "image_url": "/images/categories/cat1.png",
+            "is_active": 1,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 2,
+            "name": "Hardware Tools",
+            "image_url": "/images/categories/cat2.png",
+            "is_active": 0,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 3,
+            "name": "Spare Parts",
+            "image_url": "/images/categories/cat3.png",
+            "is_active": 1,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 4,
+            "name": "Conversions",
+            "image_url": "/images/categories/cat1.png",
+            "is_active": 0,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 5,
+            "name": "Batteries",
+            "image_url": "/images/categories/cat2.png",
+            "is_active": 1,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 6,
+            "name": "Cutting Disk",
+            "image_url": "/images/categories/cat3.png",
+            "is_active": 1,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Cordless Hammer Drill Machine 21V 13mm with Double Battery", 
+            "description": "A drill machine is a power tool used for making round holes or driving fasteners into various materials, including wood, metal, and plastic. Available in various types, such as cordless and corded, drill machines feature adjustable speed settings and interchangeable drill bits for versatility in different applications.",
+            "discount": 10,
+            "tag": "Best Selling",
+            "costPrice": 15000,
+            "images": [
+                {
+                    "image_url": "/images/products/power-tools/prod1.jpg"
+                },
+                {
+                    "image_url": "/images/products/power-tools/prod2.jpg"
+                },
+                {
+                    "image_url": "/images/products/power-tools/prod3.jpg"
+                },
+                {
+                    "image_url": "/images/products/power-tools/prod4.jpg"
+                },
+                {
+                    "image_url": "/images/products/power-tools/prod4.jpg"
+                },
+                {
+                    "image_url": "/images/products/power-tools/prod4.jpg"
+                }
+            ],
+            "quantity": 100,
+            "category": 1,
+            "is_active": 1,
+            "rating": 4,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 2,
+            "name": "DARTEK 10mm Hand Drill Machine PED 02-10", 
+            "description": "A drill machine is a power tool used for making round holes or driving fasteners into various materials, including wood, metal, and plastic. Available in various types, such as cordless and corded, drill machines feature adjustable speed settings and interchangeable drill bits for versatility in different applications.",
+            "discount": 0,
+            "tag": "Best Selling",
+            "costPrice": 4800,
+            "images": [
+                {
+                    "image_url": "/images/products/power-tools/prod2.jpg"
+                }
+            ],
+            "quantity": 150,
+            "category": 1,
+            "is_active": 0,
+            "rating": 5,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 3,
+            "name": "DARTEK 20V 13mm Cordless Drill Machine With Two Batteries",
+            "description": "A drill machine is a power tool used for making round holes or driving fasteners into various materials, including wood, metal, and plastic. Available in various types, such as cordless and corded, drill machines feature adjustable speed settings and interchangeable drill bits for versatility in different applications.",
+            "discount": 20,
+            "tag": "Best Selling",
+            "costPrice": 22000,
+            "images": [
+                {
+                    "image_url": "/images/products/power-tools/prod3.jpg"
+                }
+            ],
+            "image_url": "/images/products/power-tools/prod3.jpg",
+            "quantity": 200,
+            "category": 1,
+            "is_active": 0,
+            "rating": 3,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 4,
+            "name": "SARED 13mm 850Watt Heavy Duty Corded Impact Drill Machine", 
+            "description": "A drill machine is a power tool used for making round holes or driving fasteners into various materials, including wood, metal, and plastic. Available in various types, such as cordless and corded, drill machines feature adjustable speed settings and interchangeable drill bits for versatility in different applications.",
+            "discount": 17,
+            "tag": "Best Selling",
+            "costPrice": 9000,
+            "images": [
+                {
+                    "image_url": "/images/products/power-tools/prod4.jpg"
+                }
+            ],
+            "image_url": "/images/products/power-tools/prod4.jpg",
+            "quantity": 100,
+            "category": 1,
+            "is_active": 1,
+            "rating": 4,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 5,
+            "name": "7 Inch Automatic Wire Crimping Pliers 6 Holes Stripping Line", 
+            "description": "A drill machine is a power tool used for making round holes or driving fasteners into various materials, including wood, metal, and plastic. Available in various types, such as cordless and corded, drill machines feature adjustable speed settings and interchangeable drill bits for versatility in different applications.",
+            "discount": 39,
+            "tag": "Best Selling",
+            "costPrice": 1400,
+            "images": [
+                {
+                    "image_url": "/images/products/hardware-tools/prod1.jpg"
+                }
+            ],
+            "quantity": 100,
+            "category": 2,
+            "is_active": 1,
+            "rating": 2,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 6,
+            "name": "Electrician 10-22 AWG Wire Stripper and Cutter", 
+            "description": "A drill machine is a power tool used for making round holes or driving fasteners into various materials, including wood, metal, and plastic. Available in various types, such as cordless and corded, drill machines feature adjustable speed settings and interchangeable drill bits for versatility in different applications.",
+            "discount": 34,
+            "tag": "Best Selling",
+            "costPrice": 760,
+            "images": [
+                {
+                    "image_url": "/images/products/hardware-tools/prod2.jpg"
+                }
+            ],
+            "quantity": 120,
+            "category": 2,
+            "is_active": 0,
+            "rating": 5,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 7,
+            "name": "1.5 To 10mm Drill Chuck With Key For Drill Machine", 
+            "description": "A drill machine is a power tool used for making round holes or driving fasteners into various materials, including wood, metal, and plastic. Available in various types, such as cordless and corded, drill machines feature adjustable speed settings and interchangeable drill bits for versatility in different applications.",
+            "discount": 13,
+            "tag": "Best Selling",
+            "costPrice": 750,
+            "images": [
+                {
+                    "image_url": "/images/products/hardware-tools/prod3.jpg"
+                }
+            ],
+            "quantity": 95,
+            "category": 2,
+            "is_active": 1,
+            "rating": 3,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 8,
+            "name": "Professional Quality Stainless Steel Non-Digital Vernier Caliper", 
+            "description": "A drill machine is a power tool used for making round holes or driving fasteners into various materials, including wood, metal, and plastic. Available in various types, such as cordless and corded, drill machines feature adjustable speed settings and interchangeable drill bits for versatility in different applications.",
+            "discount": 17,
+            "tag": "Best Selling",
+            "costPrice": 1200,
+            "images": [
+                {
+                    "image_url": "/images/products/hardware-tools/prod4.jpg"
+                }
+            ],
+            "quantity": 50,
+            "category": 2,
+            "is_active": 1,
+            "rating": 4,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 9,
+            "name": "Electrician 10-22 AWG Wire Stripper and Cutter", 
+            "description": "A drill machine is a power tool used for making round holes or driving fasteners into various materials, including wood, metal, and plastic. Available in various types, such as cordless and corded, drill machines feature adjustable speed settings and interchangeable drill bits for versatility in different applications.",
+            "discount": 34,
+            "tag": "Best Selling",
+            "costPrice": 760,
+            "images": [
+                {
+                    "image_url": "/images/products/hardware-tools/prod1.jpg"
+                }
+            ],
+            "quantity": 120,
+            "category": 2,
+            "is_active": 0,
+            "rating": 5,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 10,
+            "name": "1.5 To 10mm Drill Chuck With Key For Drill Machine", 
+            "description": "A drill machine is a power tool used for making round holes or driving fasteners into various materials, including wood, metal, and plastic. Available in various types, such as cordless and corded, drill machines feature adjustable speed settings and interchangeable drill bits for versatility in different applications.",
+            "discount": 13,
+            "tag": "Best Selling",
+            "costPrice": 750,
+            "images": [
+                {
+                    "image_url": "/images/products/hardware-tools/prod2.jpg"
+                }
+            ],
+            "quantity": 95,
+            "category": 2,
+            "is_active": 1,
+            "rating": 1,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 11,
+            "name": "7 Inch Automatic Wire Crimping Pliers 6 Holes Stripping Line", 
+            "description": "A drill machine is a power tool used for making round holes or driving fasteners into various materials, including wood, metal, and plastic. Available in various types, such as cordless and corded, drill machines feature adjustable speed settings and interchangeable drill bits for versatility in different applications.",
+            "discount": 39,
+            "tag": "Best Selling",
+            "costPrice": 1400,
+            "images": [
+                {
+                    "image_url": "/images/products/hardware-tools/prod3.jpg"
+                }
+            ],
+            "quantity": 100,
+            "category": 2,
+            "is_active": 1,
+            "rating": 2,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 12,
+            "name": "1.5 To 10mm Drill Chuck With Key For Drill Machine", 
+            "description": "A drill machine is a power tool used for making round holes or driving fasteners into various materials, including wood, metal, and plastic. Available in various types, such as cordless and corded, drill machines feature adjustable speed settings and interchangeable drill bits for versatility in different applications.",
+            "discount": 13,
+            "tag": "Best Selling",
+            "costPrice": 750,
+            "images": [
+                {
+                    "image_url": "/images/products/hardware-tools/prod4.jpg"
+                }
+            ],
+            "quantity": 95,
+            "category": 2,
+            "is_active": 1,
+            "rating": 3,
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        }
+    ],
+    "reviews": [
+        {
+            "id": 1,
+            "rating": 4,
+            "review": "Perfect drill with hammering function best for professional and home use!",
+            "product": 4,
+            "customer": "Vin Diesel",
+            "email": "vindiesel@gmail.com",
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 2,
+            "rating": 5,
+            "review": "Amazing sound quality, crystal clear bass!",
+            "product": "Sony WH-1000XM4 Headphones",
+            "customer": "Chris Evans",
+            "email": "chrisevans@gmail.com",
+            "created_at": "2022-01-12T10:15:30.123Z",
+            "updated_at": "2022-01-12T10:15:30.123Z"
+        },
+        {
+            "id": 3,
+            "rating": 3,
+            "review": "Good camera, but battery drains too fast.",
+            "product": "Canon EOS 90D DSLR Camera",
+            "customer": "Scarlett Johansson",
+            "email": "scarlettj@gmail.com",
+            "created_at": "2021-09-25T14:05:20.987Z",
+            "updated_at": "2021-09-25T14:05:20.987Z"
+        },
+        {
+            "id": 4,
+            "rating": 5,
+            "review": "Comfortable and stylish, perfect for daily wear!",
+            "product": "Nike Air Max 270 Sneakers",
+            "customer": "Robert Downey Jr.",
+            "email": "rdj@gmail.com",
+            "created_at": "2023-03-15T08:45:10.654Z",
+            "updated_at": "2023-03-15T08:45:10.654Z"
+        },
+        {
+            "id": 5,
+            "rating": 4,
+            "review": "Fast laptop, but heats up quickly.",
+            "product": "Dell XPS 15 Laptop",
+            "customer": "Gal Gadot",
+            "email": "galgadot@gmail.com",
+            "created_at": "2022-08-20T12:30:05.321Z",
+            "updated_at": "2022-08-20T12:30:05.321Z"
+        },
+        {
+            "id": 6,
+            "rating": 5,
+            "review": "Best gaming mouse, precise and responsive!",
+            "product": "Logitech G502 HERO Gaming Mouse",
+            "customer": "Dwayne Johnson",
+            "email": "therock@gmail.com",
+            "created_at": "2021-06-10T16:55:45.852Z",
+            "updated_at": "2021-06-10T16:55:45.852Z"
+        },
+        {
+            "id": 7,
+            "rating": 2,
+            "review": "Stopped working after a month, very disappointed.",
+            "product": "Samsung 32-inch Smart TV",
+            "customer": "Tom Hardy",
+            "email": "tomhardy@gmail.com",
+            "created_at": "2023-05-05T07:20:10.456Z",
+            "updated_at": "2023-05-05T07:20:10.456Z"
+        },
+        {
+            "id": 8,
+            "rating": 5,
+            "review": "A fantastic smartwatch with all the needed features.",
+            "product": "Apple Watch Series 7",
+            "customer": "Mark Ruffalo",
+            "email": "markruffalo@gmail.com",
+            "created_at": "2021-10-30T18:05:25.753Z",
+            "updated_at": "2021-10-30T18:05:25.753Z"
+        },
+        {
+            "id": 9,
+            "rating": 4,
+            "review": "Great keyboard, but RGB lighting is too dim.",
+            "product": "Razer BlackWidow Mechanical Keyboard",
+            "customer": "Zendaya",
+            "email": "zendaya@gmail.com",
+            "created_at": "2023-05-22T11:30:15.321Z",
+            "updated_at": "2023-05-22T11:30:15.321Z"
+        },
+        {
+            "id": 10,
+            "rating": 5,
+            "review": "Excellent lens, perfect for professional photography!",
+            "product": "Nikon AF-S 50mm f/1.8G Lens",
+            "customer": "Jason Momoa",
+            "email": "jasonmomoa@gmail.com",
+            "created_at": "2022-02-10T20:45:30.159Z",
+            "updated_at": "2022-02-10T20:45:30.159Z"
+        },
+        {
+            "id": 11,
+            "rating": 3,
+            "review": "Average TV, struggles in bright daylight.",
+            "product": "LG OLED CX 55-inch TV",
+            "customer": "Benedict Cumberbatch",
+            "email": "benedictc@gmail.com",
+            "created_at": "2023-01-08T14:15:10.987Z",
+            "updated_at": "2023-01-08T14:15:10.987Z"
+        },
+        {
+            "id": 12,
+            "rating": 4,
+            "review": "Good washing machine, but a little noisy.",
+            "product": "Bosch 7kg Front Load Washer",
+            "customer": "Chris Hemsworth",
+            "email": "chrishemsworth@gmail.com",
+            "created_at": "2021-12-05T16:25:50.654Z",
+            "updated_at": "2021-12-05T16:25:50.654Z"
+        },
+        {
+            "id": 13,
+            "rating": 5,
+            "review": "Powerful AC with excellent cooling!",
+            "product": "Daikin 1.5 Ton Inverter AC",
+            "customer": "Ryan Reynolds",
+            "email": "ryanreynolds@gmail.com",
+            "created_at": "2022-07-18T09:40:35.852Z",
+            "updated_at": "2022-07-18T09:40:35.852Z"
+        },
+        {
+            "id": 14,
+            "rating": 2,
+            "review": "Battery drains quickly, not worth it.",
+            "product": "Oppo Reno 8 Pro",
+            "customer": "Emma Watson",
+            "email": "emmawatson@gmail.com",
+            "created_at": "2021-11-20T07:30:20.456Z",
+            "updated_at": "2021-11-20T07:30:20.456Z"
+        },
+        {
+            "id": 15,
+            "rating": 4,
+            "review": "Decent smartwatch, but straps are uncomfortable.",
+            "product": "Samsung Galaxy Watch 5",
+            "customer": "Brad Pitt",
+            "email": "bradpitt@gmail.com",
+            "created_at": "2023-09-12T15:05:05.987Z",
+            "updated_at": "2023-09-12T15:05:05.987Z"
+        },
+        {
+            "id": 16,
+            "rating": 5,
+            "review": "Best phone I have ever used, amazing performance!",
+            "product": "iPhone 14 Pro Max",
+            "customer": "Leonardo DiCaprio",
+            "email": "leodicaprio@gmail.com",
+            "created_at": "2022-06-14T18:10:45.753Z",
+            "updated_at": "2022-06-14T18:10:45.753Z"
+        },
+        {
+            "id": 17,
+            "rating": 3,
+            "review": "Fridge is okay, but cooling is slow.",
+            "product": "Samsung 345L Refrigerator",
+            "customer": "Natalie Portman",
+            "email": "natalieportman@gmail.com",
+            "created_at": "2021-05-28T10:55:15.321Z",
+            "updated_at": "2021-05-28T10:55:15.321Z"
+        },
+        {
+            "id": 18,
+            "rating": 5,
+            "review": "Amazing gaming console, totally worth it!",
+            "product": "Sony PlayStation 5",
+            "customer": "Hugh Jackman",
+            "email": "hughjackman@gmail.com",
+            "created_at": "2023-07-25T13:45:30.456Z",
+            "updated_at": "2023-07-25T13:45:30.456Z"
+        }
+    ],
+    "shipping_cost": [
+        {
+            "id": 1,
+            "name": "Azad Kashmir",
+            "fee": 400
+
+        },
+        {
+            "id": 2,
+            "name": "Balochistan",
+            "fee": 450
+        },
+        {
+            "id": 3,
+            "name": "FATA",
+            "fee": 420
+        },
+        {
+            "id": 4,
+            "name": "Gilgit Baltistan",
+            "fee": 250
+        },
+        {
+            "id": 5,
+            "name": "Islamabad Capital Territory",
+            "fee": 0
+        },
+        {
+            "id": 6,
+            "name": "Khyber Pakhtunkhwa",
+            "fee": 150
+        },
+        {
+            "id": 7,
+            "name": "Punjab",
+            "fee": 0
+        },
+        {
+            "id": 8,
+            "name": "Sindh",
+            "fee": 350
+        }
+    ],
+    "customers": [
+        {
+            "id": 1,
+            "firstName": "Muhammad Ali",
+            "lastName": "Khalil",
+            "email": "muhammadalikhalil@gmail.com",
+            "username": "emmayyque",
+            "phone": "+923123456789",
+            "created_at": "2021-11-17T03:19:56.186Z",
+            "updated_at": "2021-11-17T03:19:56.186Z"
+        },
+        {
+            "id": 2,
+            "firstName": "Ayesha",
+            "lastName": "Khan",
+            "email": "ayesha.khan@example.com",
+            "username": "ayesha_k",
+            "phone": "+923112345678",
+            "created_at": "2022-05-10T10:30:15.123Z",
+            "updated_at": "2022-05-10T10:30:15.123Z"
+        },
+        {
+            "id": 3,
+            "firstName": "Ahmed",
+            "lastName": "Raza",
+            "email": "ahmed.raza@example.com",
+            "username": "ahmed_raza",
+            "phone": "+923221234567",
+            "created_at": "2023-01-20T14:45:30.456Z",
+            "updated_at": "2023-01-20T14:45:30.456Z"
+        },
+        {
+            "id": 4,
+            "firstName": "Fatima",
+            "lastName": "Javed",
+            "email": "fatima.javed@example.com",
+            "username": "fatima_j",
+            "phone": "+923334567890",
+            "created_at": "2022-09-15T08:10:45.789Z",
+            "updated_at": "2022-09-15T08:10:45.789Z"
+        },
+        {
+            "id": 5,
+            "firstName": "Usman",
+            "lastName": "Farooq",
+            "email": "usman.farooq@example.com",
+            "username": "usman_f",
+            "phone": "+923445678901",
+            "created_at": "2023-07-05T18:20:05.321Z",
+            "updated_at": "2023-07-05T18:20:05.321Z"
+        },
+        {
+            "id": 6,
+            "firstName": "Zainab",
+            "lastName": "Malik",
+            "email": "zainab.malik@example.com",
+            "username": "zainab_m",
+            "phone": "+923556789012",
+            "created_at": "2021-12-25T22:55:50.654Z",
+            "updated_at": "2021-12-25T22:55:50.654Z"
+        },
+        {
+            "id": 7,
+            "firstName": "Bilal",
+            "lastName": "Shah",
+            "email": "bilal.shah@example.com",
+            "username": "bilal_s",
+            "phone": "+923667890123",
+            "created_at": "2022-03-12T06:40:25.987Z",
+            "updated_at": "2022-03-12T06:40:25.987Z"
+        },
+        {
+            "id": 8,
+            "firstName": "Sana",
+            "lastName": "Iqbal",
+            "email": "sana.iqbal@example.com",
+            "username": "sana_i",
+            "phone": "+923778901234",
+            "created_at": "2023-10-30T12:15:35.159Z",
+            "updated_at": "2023-10-30T12:15:35.159Z"
+        },
+        {
+            "id": 9,
+            "firstName": "Hamza",
+            "lastName": "Butt",
+            "email": "hamza.butt@example.com",
+            "username": "hamza_b",
+            "phone": "+923889012345",
+            "created_at": "2021-07-22T09:05:10.852Z",
+            "updated_at": "2021-07-22T09:05:10.852Z"
+        },
+        {
+            "id": 10,
+            "firstName": "Nida",
+            "lastName": "Aslam",
+            "email": "nida.aslam@example.com",
+            "username": "nida_a",
+            "phone": "+923990123456",
+            "created_at": "2022-06-18T17:30:45.753Z",
+            "updated_at": "2022-06-18T17:30:45.753Z"
+        },
+        {
+            "id": 11,
+            "firstName": "Hassan",
+            "lastName": "Tariq",
+            "email": "hassan.tariq@example.com",
+            "username": "hassan_t",
+            "phone": "+923101234567",
+            "created_at": "2021-08-05T11:22:33.456Z",
+            "updated_at": "2021-08-05T11:22:33.456Z"
+        },
+        {
+            "id": 12,
+            "firstName": "Maryam",
+            "lastName": "Qureshi",
+            "email": "maryam.qureshi@example.com",
+            "username": "maryam_q",
+            "phone": "+923211234567",
+            "created_at": "2023-04-15T08:50:10.123Z",
+            "updated_at": "2023-04-15T08:50:10.123Z"
+        },
+        {
+            "id": 13,
+            "firstName": "Rizwan",
+            "lastName": "Hameed",
+            "email": "rizwan.hameed@example.com",
+            "username": "rizwan_h",
+            "phone": "+923321234567",
+            "created_at": "2022-11-30T14:05:20.987Z",
+            "updated_at": "2022-11-30T14:05:20.987Z"
+        },
+        {
+            "id": 14,
+            "firstName": "Saima",
+            "lastName": "Jamil",
+            "email": "saima.jamil@example.com",
+            "username": "saima_j",
+            "phone": "+923431234567",
+            "created_at": "2023-02-12T07:30:45.321Z",
+            "updated_at": "2023-02-12T07:30:45.321Z"
+        },
+        {
+            "id": 15,
+            "firstName": "Faisal",
+            "lastName": "Nadeem",
+            "email": "faisal.nadeem@example.com",
+            "username": "faisal_n",
+            "phone": "+923541234567",
+            "created_at": "2021-10-25T18:10:15.654Z",
+            "updated_at": "2021-10-25T18:10:15.654Z"
+        },
+        {
+            "id": 16,
+            "firstName": "Amina",
+            "lastName": "Siddiqui",
+            "email": "amina.siddiqui@example.com",
+            "username": "amina_s",
+            "phone": "+923651234567",
+            "created_at": "2023-06-20T09:15:30.852Z",
+            "updated_at": "2023-06-20T09:15:30.852Z"
+        },
+        {
+            "id": 17,
+            "firstName": "Kamran",
+            "lastName": "Iqbal",
+            "email": "kamran.iqbal@example.com",
+            "username": "kamran_i",
+            "phone": "+923761234567",
+            "created_at": "2022-08-10T22:55:05.753Z",
+            "updated_at": "2022-08-10T22:55:05.753Z"
+        },
+        {
+            "id": 18,
+            "firstName": "Naila",
+            "lastName": "Hassan",
+            "email": "naila.hassan@example.com",
+            "username": "naila_h",
+            "phone": "+923871234567",
+            "created_at": "2021-05-18T12:40:25.456Z",
+            "updated_at": "2021-05-18T12:40:25.456Z"
+        },
+        {
+            "id": 19,
+            "firstName": "Waleed",
+            "lastName": "Arif",
+            "email": "waleed.arif@example.com",
+            "username": "waleed_a",
+            "phone": "+923981234567",
+            "created_at": "2022-12-22T15:20:10.987Z",
+            "updated_at": "2022-12-22T15:20:10.987Z"
+        },
+        {
+            "id": 20,
+            "firstName": "Sadia",
+            "lastName": "Rehman",
+            "email": "sadia.rehman@example.com",
+            "username": "sadia_r",
+            "phone": "+923091234567",
+            "created_at": "2023-09-30T05:55:35.159Z",
+            "updated_at": "2023-09-30T05:55:35.159Z"
+        },
+        {
+            "id": 21,
+            "firstName": "Tariq",
+            "lastName": "Baig",
+            "email": "tariq.baig@example.com",
+            "username": "tariq_b",
+            "phone": "+923112345678",
+            "created_at": "2021-03-10T16:25:50.654Z",
+            "updated_at": "2021-03-10T16:25:50.654Z"
+        },
+        {
+            "id": 22,
+            "firstName": "Farah",
+            "lastName": "Ali",
+            "email": "farah.ali@example.com",
+            "username": "farah_a",
+            "phone": "+923222345678",
+            "created_at": "2023-05-27T13:45:20.753Z",
+            "updated_at": "2023-05-27T13:45:20.753Z"
+        },
+        {
+            "id": 23,
+            "firstName": "Yasir",
+            "lastName": "Shah",
+            "email": "yasir.shah@example.com",
+            "username": "yasir_s",
+            "phone": "+923332345678",
+            "created_at": "2022-04-12T20:10:45.852Z",
+            "updated_at": "2022-04-12T20:10:45.852Z"
+        },
+        {
+            "id": 24,
+            "firstName": "Rabia",
+            "lastName": "Ahmed",
+            "email": "rabia.ahmed@example.com",
+            "username": "rabia_a",
+            "phone": "+923442345678",
+            "created_at": "2023-07-15T09:30:05.321Z",
+            "updated_at": "2023-07-15T09:30:05.321Z"
+        },
+        {
+            "id": 25,
+            "firstName": "Imran",
+            "lastName": "Kamal",
+            "email": "imran.kamal@example.com",
+            "username": "imran_k",
+            "phone": "+923552345678",
+            "created_at": "2021-06-20T18:05:15.456Z",
+            "updated_at": "2021-06-20T18:05:15.456Z"
+        }    
+    ],
+    "orders": [
+        {
+            "id": 1,
+            "total_bill": 12000,
+            "customer": 3,
+            "address": 1,
+            "status": 1,
+            "created_at": "2021-06-20T18:05:15.456Z",
+            "updated_at": "2021-06-20T18:05:15.456Z"
+        },
+        {
+            "id": 2,
+            "total_bill": 15000,
+            "customer": 5,
+            "address": 1,
+            "status": 2,
+            "created_at": "2021-07-10T10:15:30.123Z",
+            "updated_at": "2021-07-10T10:15:30.123Z"
+        },
+        {
+            "id": 3,
+            "total_bill": 8700,
+            "customer": 7,
+            "address": 1,
+            "status": 1,
+            "created_at": "2022-01-25T14:05:20.987Z",
+            "updated_at": "2022-01-25T14:05:20.987Z"
+        },
+        {
+            "id": 4,
+            "total_bill": 23400,
+            "customer": 2,
+            "address": 1,
+            "status": 3,
+            "created_at": "2021-09-15T08:45:10.654Z",
+            "updated_at": "2021-09-15T08:45:10.654Z"
+        },
+        {
+            "id": 5,
+            "total_bill": 9600,
+            "customer": 6,
+            "address": 1,
+            "status": 1,
+            "created_at": "2023-03-12T12:30:05.321Z",
+            "updated_at": "2023-03-12T12:30:05.321Z"
+        },
+        {
+            "id": 6,
+            "total_bill": 11000,
+            "customer": 9,
+            "address": 1,
+            "status": 2,
+            "created_at": "2022-08-20T16:55:45.852Z",
+            "updated_at": "2022-08-20T16:55:45.852Z"
+        },
+        {
+            "id": 7,
+            "total_bill": 5000,
+            "customer": 1,
+            "address": 1,
+            "status": 1,
+            "created_at": "2023-06-05T07:20:10.456Z",
+            "updated_at": "2023-06-05T07:20:10.456Z"
+        },
+        {
+            "id": 8,
+            "total_bill": 27000,
+            "customer": 4,
+            "address": 1,
+            "status": 3,
+            "created_at": "2021-10-30T18:05:25.753Z",
+            "updated_at": "2021-10-30T18:05:25.753Z"
+        },
+        {
+            "id": 9,
+            "total_bill": 13450,
+            "customer": 8,
+            "address": 1,
+            "status": 2,
+            "created_at": "2023-05-22T11:30:15.321Z",
+            "updated_at": "2023-05-22T11:30:15.321Z"
+        },
+        {
+            "id": 10,
+            "total_bill": 18000,
+            "customer": 10,
+            "address": 1,
+            "status": 1,
+            "created_at": "2022-02-10T20:45:30.159Z",
+            "updated_at": "2022-02-10T20:45:30.159Z"
+        },
+        {
+            "id": 11,
+            "total_bill": 7500,
+            "customer": 12,
+            "address": 1,
+            "status": 2,
+            "created_at": "2023-01-08T14:15:10.987Z",
+            "updated_at": "2023-01-08T14:15:10.987Z"
+        },
+        {
+            "id": 12,
+            "total_bill": 9300,
+            "customer": 15,
+            "address": 1,
+            "status": 1,
+            "created_at": "2021-12-05T16:25:50.654Z",
+            "updated_at": "2021-12-05T16:25:50.654Z"
+        },
+        {
+            "id": 13,
+            "total_bill": 22000,
+            "customer": 11,
+            "address": 1,
+            "status": 3,
+            "created_at": "2022-07-18T09:40:35.852Z",
+            "updated_at": "2022-07-18T09:40:35.852Z"
+        },
+        {
+            "id": 14,
+            "total_bill": 7800,
+            "customer": 14,
+            "address": 1,
+            "status": 1,
+            "created_at": "2021-11-20T07:30:20.456Z",
+            "updated_at": "2021-11-20T07:30:20.456Z"
+        },
+        {
+            "id": 15,
+            "total_bill": 19000,
+            "customer": 13,
+            "address": 1,
+            "status": 2,
+            "created_at": "2023-09-12T15:05:05.987Z",
+            "updated_at": "2023-09-12T15:05:05.987Z"
+        },
+        {
+            "id": 16,
+            "total_bill": 8800,
+            "customer": 16,
+            "address": 1,
+            "status": 1,
+            "created_at": "2022-06-14T18:10:45.753Z",
+            "updated_at": "2022-06-14T18:10:45.753Z"
+        },
+        {
+            "id": 17,
+            "total_bill": 29500,
+            "customer": 18,
+            "address": 1,
+            "status": 3,
+            "created_at": "2021-05-28T10:55:15.321Z",
+            "updated_at": "2021-05-28T10:55:15.321Z"
+        },
+        {
+            "id": 18,
+            "total_bill": 10200,
+            "customer": 20,
+            "address": 1,
+            "status": 2,
+            "created_at": "2023-07-25T13:45:30.456Z",
+            "updated_at": "2023-07-25T13:45:30.456Z"
+        },
+        {
+            "id": 19,
+            "total_bill": 15600,
+            "customer": 17,
+            "address": 1,
+            "status": 1,
+            "created_at": "2022-04-10T09:20:50.159Z",
+            "updated_at": "2022-04-10T09:20:50.159Z"
+        },
+        {
+            "id": 20,
+            "total_bill": 27000,
+            "customer": 19,
+            "address": 1,
+            "status": 3,
+            "created_at": "2023-08-15T06:30:10.852Z",
+            "updated_at": "2023-08-15T06:30:10.852Z"
+        },
+        {
+            "id": 21,
+            "total_bill": 9900,
+            "customer": 22,
+            "address": 1,
+            "status": 2,
+            "created_at": "2021-10-02T14:05:35.654Z",
+            "updated_at": "2021-10-02T14:05:35.654Z"
+        },
+        {
+            "id": 22,
+            "total_bill": 8700,
+            "customer": 21,
+            "address": 1,
+            "status": 1,
+            "created_at": "2022-12-05T19:15:25.753Z",
+            "updated_at": "2022-12-05T19:15:25.753Z"
+        },
+        {
+            "id": 23,
+            "total_bill": 31000,
+            "customer": 23,
+            "address": 1,
+            "status": 3,
+            "created_at": "2023-03-18T08:40:05.987Z",
+            "updated_at": "2023-03-18T08:40:05.987Z"
+        },
+        {
+            "id": 24,
+            "total_bill": 12800,
+            "customer": 24,
+            "address": 1,
+            "status": 2,
+            "created_at": "2021-11-10T22:25:45.321Z",
+            "updated_at": "2021-11-10T22:25:45.321Z"
+        },
+        {
+            "id": 25,
+            "total_bill": 14600,
+            "customer": 25,
+            "address": 1,
+            "status": 1,
+            "created_at": "2022-09-30T17:30:20.753Z",
+            "updated_at": "2022-09-30T17:30:20.753Z"
+        }
+    ],
+    "specifications": [
+        {
+            "name": "Weight",
+            "value": "1.2kg",
+            "product": 1
+        },
+        {
+            "name": "Motor Type",
+            "value": "Brushless motor",
+            "product": 1
+        },
+        {
+            "name": "Color",
+            "value": "Green",
+            "product": 1
+        }
+    ],
+    "banners": [
+        {
+            "id": 1,
+            "name": "Hero Banner",
+            "images": [
+                {
+                    "image_url": "/images/banners/hero-banner.jpg"
+                },
+                {
+                    "image_url": "/images/banners/banner1.jpg"
+                },
+                {
+                    "image_url": "/images/banners/banner2.jpg"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Store Banner",
+            "images": [
+                {
+                    "image_url": "/images/banners/banner1.jpg"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Home Banner",
+            "images": [
+                {
+                    "image_url": "/images/banners/banner2.jpg"
+                }
+            ]
+        }
+    ]
+}
+
