@@ -70,7 +70,7 @@ const OrderSummary = ({ billing }) => {
                 state: billing.formValues.state,
                 zipCode: billing.formValues.zipCode,
                 orderItems: orderItems,
-                shippingCost: data.shippingCost,
+                shippingCost: shippingCost,
                 totalBill: getTotal()
             })
         })

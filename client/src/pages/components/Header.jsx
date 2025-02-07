@@ -374,7 +374,7 @@ const Header = (props) => {
                 {
                     catData.categories && (catData.categories).map((category, index) => (
                         <li key={index}>
-                            <Link to={`/Shop/${category.name.split(" ").join("-").toLowerCase()}`} id={`${category.id}`} >{category.name}</Link>
+                            <Link to={`/shop/${category.name.split(" ").join("-").toLowerCase()}`} id={`${category.id}`} >{category.name}</Link>
                         </li>
                     ))
                 }

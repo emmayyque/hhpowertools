@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import * as Icons from 'react-icons/fa6'
 import { useNavigate } from 'react-router-dom'
-import ProductContext from '../../context/products/ProductContext'
 import CartContext from '../../context/cart/CartContext'
+
+const baseURL = import.meta.env.VITE_NODE_URL
 
 const ProductInfo = (props) => {
     const cartData = useContext(CartContext)
@@ -35,10 +36,10 @@ const ProductInfo = (props) => {
         
         let cart = JSON.parse(localStorage.getItem("cart")) || []
         let cartItem = {
-            id: `${prodData.product[0].id}`,
-            name: prodData.product[0].name,
-            image_url: prodData.product[0].images[0].image_url,
-            price: getDiscountedPrice(),
+            id: `${props.product._id}`,
+            name: props.product.name,
+            imageUrl: baseURL + props.product.images[0].imageUrl,
+            price: getDiscountedPrice(props.product.costPrice, props.product.discount),
             quantity: 1
         }
 
@@ -65,8 +66,8 @@ const ProductInfo = (props) => {
     const buyNowHandler = (e) => {
         e.preventDefault()
         addToCartHandler()
-        navigate('/Shop/Checkout')
-        window.location.reload();
+        navigate('/shop/checkout')
+        // window.location.reload();
     }
 
   return (

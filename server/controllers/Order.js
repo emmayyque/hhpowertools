@@ -90,7 +90,7 @@ const sendMailToCustomer = (name, email, subject, msg1, msg2, orderNo) => {
             <thead style="background-color: #26ad20; height: 30px; box-sizing: border-box; padding: 10px;">
                 <tr>
                     <td style="text-align: center; padding: 15px;">
-                        <img src="https://www.hhpowertools.pk/wp-content/uploads/2023/10/logo3.png" alt="HH PowerTools Logo" style="height: 30px; width: auto; margin: auto;">
+                        <img src="https://hhpowertools.vercel.app/logo3-white.png" alt="HH PowerTools Logo" style="height: 30px; width: auto; margin: auto;">
                     </td>
                 </tr>
             </thead>
@@ -112,7 +112,7 @@ const sendMailToCustomer = (name, email, subject, msg1, msg2, orderNo) => {
                 </tr>
                 <tr>
                     <td style="font-size: 0.7rem;">
-                        ${msg2} Track your status at: <a href="https://www.hhpowertools.pk/tracking">https://www.hhpowertools.pk/tracking</a>
+                        ${msg2} Track your status at: <a href="https://hhpowertools.vercel.app/tracking">https://hhpowertools.vercel.app/tracking</a>
                     </td>
                 </tr>
                 <tr>
@@ -122,8 +122,8 @@ const sendMailToCustomer = (name, email, subject, msg1, msg2, orderNo) => {
                 </tr>
                 <tr>
                     <td style="padding: 20px 0px;">
-                        <a href="https://www.hhpowertools.pk/" style="padding: 8px 10px; background-color: #000000; color: #FFFFFF; font-size: 0.7rem; border-radius: 5px; font-weight: 600; text-decoration: none;">Track Order</a> <span style="font-size: 0.8rem; margin: 0px 7px;">or</span>
-                        <a href="https://www.hhpowertools.pk/" style="font-size: 0.75rem; margin: 0;">Visit our Store</a>
+                        <a href="https://hhpowertools.vercel.app/tracking" style="padding: 8px 10px; background-color: #000000; color: #FFFFFF; font-size: 0.7rem; border-radius: 5px; font-weight: 600; text-decoration: none;">Track Order</a> <span style="font-size: 0.8rem; margin: 0px 7px;">or</span>
+                        <a href="https://hhpowertools.vercel.app/store" style="font-size: 0.75rem; margin: 0;">Visit our Store</a>
                     </td>
                 </tr>
             </tbody>
@@ -133,13 +133,13 @@ const sendMailToCustomer = (name, email, subject, msg1, msg2, orderNo) => {
                 </tr>
                 <tr>
                     <td style="padding-bottom: 20px;">
-                        <a href="" style=" text-decoration: none;">
+                        <a href="https://hhpowertools.vercel.app" style=" text-decoration: none;">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="14" height="14" viewBox="0 0 50 50" style="fill:#FFFFFF;">
                                 <path d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z"></path>
                             </svg>
                         </a>
                         
-                        <a href="" style=" text-decoration: none;">
+                        <a href="https://hhpowertools.vercel.app" style=" text-decoration: none;">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="14" height="14" viewBox="0 0 64 64" style="fill:#FFFFFF;">
                                 <path d="M32,6C17.642,6,6,17.642,6,32c0,13.035,9.603,23.799,22.113,25.679V38.89H21.68v-6.834h6.433v-4.548	c0-7.529,3.668-10.833,9.926-10.833c2.996,0,4.583,0.223,5.332,0.323v5.965h-4.268c-2.656,0-3.584,2.52-3.584,5.358v3.735h7.785	l-1.055,6.834h-6.73v18.843C48.209,56.013,58,45.163,58,32C58,17.642,46.359,6,32,6z"></path>
                             </svg>
@@ -387,7 +387,7 @@ router.post(
             // Your order is placed with <strong>Order No: HHPT123456789</strong>. You will receive confirmation shortly.
             // Send confirmation mail to the customer
             // Prepare the subject:
-            const customer = await User.findById(req.user.id).select("email")
+            const customer = await User.findById(req.user.id).select("email firstName lastName")
             if ( customer ) {
                 const name = customer.firstName + ' ' + customer.lastName
                 const subject = `Order ${orderNo} Placed at HHPowerTools`
