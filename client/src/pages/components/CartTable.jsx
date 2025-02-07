@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import * as Icons from 'react-icons/fa6'
-import Image from '../../../public/images/products/hardware-tools/prod1.jpg'
 import { useContext } from 'react'
 import CartContext from '../../context/cart/CartContext'
 

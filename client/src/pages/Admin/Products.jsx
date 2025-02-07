@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import styles from './Dash.module.css'
 import * as Icons from 'react-icons/fa6'
 import Pagination from '../components/dashboard/Pagination'
-import Product from '../../../public/images/products/hardware-tools/prod1.jpg'
 import CategoryContext from '../../context/categories/CategoryContext'
 const baseURL = import.meta.env.VITE_NODE_URL
 

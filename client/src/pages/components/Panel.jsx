@@ -1,6 +1,5 @@
 import React from 'react'
 import SectionLabel from './SectionLabel'
-import Image from '../../../public/images/products/hardware-tools/prod1.jpg'
 import PanelItem from './PanelItem'
 import Specifications from './Specifications'
 import Description from './Description'

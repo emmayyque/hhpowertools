@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styles from './Dash.module.css'
-import Product from '../../../public/images/products/power-tools/prod1.jpg'
 import { useEffect } from 'react'
 import Pagination from '../components/dashboard/Pagination'
 const baseURL = import.meta.env.VITE_NODE_URL
