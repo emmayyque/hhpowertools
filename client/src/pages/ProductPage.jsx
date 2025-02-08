@@ -94,10 +94,12 @@ const ProductPage = () => {
           product.length === 0 ? '' :
           <>
             <Helmet>
-              <meta property="og:title" content={product.description} />
+              <meta property="og:title" content={product.name} />
               <meta property="og:description" content={product.description} />
               <meta property="og:image" content={baseURL + product.images[0].imageUrl} />
-              <meta property="og:url" content="https://hhpowertools.pk" />
+              <meta property="og:image:width" content="1200" />
+              <meta property="og:image:height" content="630" />
+              <meta property="og:url" content={baseURL + '/shop/product/' + product.name.split(" ").join("-")} />
               <meta property="og:type" content="website" />
               {/* Optional for Twitter card */}
               <meta name="twitter:card" content={product.description} />
