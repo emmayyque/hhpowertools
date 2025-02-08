@@ -57,7 +57,7 @@ const SectionLabel = (props) => {
         <h3>{ props.heading }</h3>
         {
             props.option && (
-                <a href={action} className='row gap0'>
+                <a href={props.option.ref} className='row gap0'>
                     {props.option.label}
                     <Icons.FaArrowRight className='icon'/>
                 </a>

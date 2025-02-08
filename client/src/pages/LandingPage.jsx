@@ -62,8 +62,8 @@ const LandingPage = () => {
         {
             catData.categories.length === 0 ? '' :
             <>
-                <ProductSection label={catData.categories[0].name} option={options[0]} />
-                <ProductSection label={catData.categories[1].name} option={options[1]} />
+                <ProductSection label={catData.categories[0].name} option={{ label: "View all", ref: `/shop/${catData.categories[0].name.split(" ").join("-").toLowerCase()}` }} />
+                <ProductSection label={catData.categories[1].name} option={{ label: "View all", ref: `/shop/${catData.categories[1].name.split(" ").join("-").toLowerCase()}` }} />
             </>
 
         }
