@@ -12,38 +12,44 @@ const Panel = (props) => {
     const [ sales, setSales ] = useState([])
 
     const getDeliveredOrdersInPastMonth = async () => {
-        const resp = await fetch(`${baseURL}/api/order/getDeliveredOrdersInPastMonth`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "auth-token": `${import.meta.env.VITE_AUTH_TOKEN}`
-            }            
-        })
-
-        const json = await resp.json()
-
-        if (json.success) {
-            setOrders(json.data)
-        } else {
-            console.log(json)
+        const token = localStorage.getItem("token")
+        if (token) {
+            const resp = await fetch(`${baseURL}/api/order/getDeliveredOrdersInPastMonth`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "auth-token": token
+                }            
+            })
+    
+            const json = await resp.json()
+    
+            if (json.success) {
+                setOrders(json.data)
+            } else {
+                console.log(json)
+            }
         }
     }
 
-    const getSalesOverviewInPastYear = async () => {
-        const resp = await fetch(`${baseURL}/api/order/getSalesOverviewInPastYear`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "auth-token": `${import.meta.env.VITE_AUTH_TOKEN}`
+    const getSalesOverviewInPastYear = async () => {        
+        const token = localStorage.getItem("token")
+        if (token) {
+            const resp = await fetch(`${baseURL}/api/order/getSalesOverviewInPastYear`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "auth-token": token
+                }
+            })
+
+            const json = await resp.json()
+
+            if (json.success) {
+                setSales(json.data)
+            } else {
+                console.log(json)
             }
-        })
-
-        const json = await resp.json()
-
-        if (json.success) {
-            setSales(json.data)
-        } else {
-            console.log(json)
         }
     }
 
