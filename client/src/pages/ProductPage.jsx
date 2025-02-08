@@ -96,7 +96,7 @@ const ProductPage = () => {
             <Helmet>
               <meta property="og:title" content={product.name} />
               <meta property="og:description" content={product.description} />
-              <meta property="og:image" content={baseURL + product.images[0].imageUrl} />
+              <meta property="og:image:secure_url" content={baseURL + product.images[0].imageUrl} />
               <meta property="og:image:width" content="1200" />
               <meta property="og:image:height" content="630" />
               <meta property="og:url" content={baseURL + '/shop/product/' + product.name.split(" ").join("-")} />
