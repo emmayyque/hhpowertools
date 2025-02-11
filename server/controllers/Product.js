@@ -346,7 +346,7 @@ router.post(
                 isActive: 1
             })
 
-            if (specLabels[0] == '') {
+            if (specLabels.length == 1 && specLabels[0] == '' ) {
                 specLabels.length = 0
                 specValues.length = 0
             }

@@ -304,7 +304,7 @@ li:hover {
 .formField label {
     font-size: 0.7rem;
     font-weight: 500;
-    color: var(--secondary-color-light);
+    color: var(--secondary-color);
 }
 
 .formField input,

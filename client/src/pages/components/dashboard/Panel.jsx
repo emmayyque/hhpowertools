@@ -46,11 +46,47 @@ const Panel = (props) => {
             const json = await resp.json()
 
             if (json.success) {
-                setSales(json.data)
+                processSalesData(json.data)
             } else {
                 console.log(json)
             }
         }
+    }
+
+    // useEffect(() => {        
+    //     processSalesData(sales)
+    // }, [sales])
+
+    const processSalesData = (salesData) => {
+        salesData.forEach(element => {
+            if (element._id.month == 1) {
+                element._id.month = 'January'
+            } else if (element._id.month == 2) {
+                element._id.month = 'February'
+            } else if (element._id.month == 3) {
+                element._id.month = 'March'
+            } else if (element._id.month == 4) {
+                element._id.month = 'April'
+            } else if (element._id.month == 5) {
+                element._id.month = 'May'
+            } else if (element._id.month == 6) {
+                element._id.month = 'June'
+            } else if (element._id.month == 7) {
+                element._id.month = 'July'
+            } else if (element._id.month == 8) {
+                element._id.month = 'August'
+            } else if (element._id.month == 9) {
+                element._id.month = 'September'
+            } else if (element._id.month == 10) {
+                element._id.month = 'October'
+            } else if (element._id.month == 11) {
+                element._id.month = 'November'
+            } else if (element._id.month == 12) {
+                element._id.month = 'December'
+            } 
+        });
+
+        setSales(salesData)
     }
 
     useEffect(() => {
@@ -78,7 +114,7 @@ const Panel = (props) => {
     <div className={`${styles.reviewAnalysis} ${styles.dPanel}`}>
         <h2 className={styles.dPanelHeading}>{props.title}</h2>
         {
-            props.title == 'Orders' ?  <p>{ orders.length + " " + props.description }</p> : props.title == 'Sales Overview' ? <p>{ sales.length + " " + props.description }</p> : '0'
+            props.title == 'Orders' ?  <p>{ orders.length + " " + props.description }</p> : props.title == 'Sales Overview' ? <p>{ props.description }</p> : '0'
         }
         <div className={`${styles.dPanelBody} ${styles.column} ${styles.gap3}`}>
             {
@@ -128,8 +164,8 @@ const Panel = (props) => {
                         <YAxis />
                         <Tooltip />
                         <Legend />
-                        <Line type="monotone" dataKey="total_sales" stroke="#26ad20" activeDot={{ r: 8 }} />
-                        <Line type="monotone" dataKey="total_orders" stroke="#ffc107" activeDot={{ r: 8 }} />
+                        <Line type="monotone" dataKey="total_sales" stroke="#26ad20" activeDot={{ r: 7 }} />
+                        <Line type="monotone" dataKey="total_orders" stroke="#ffc107" activeDot={{ r: 7 }} />
                     </LineChart>
                 </ResponsiveContainer> : ''
             }
