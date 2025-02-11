@@ -346,7 +346,12 @@ router.post(
                 isActive: 1
             })
 
-            if (specLabels.length > 0 && specLabels[0] != '') {
+            if (specLabels[0] == '') {
+                specLabels.length = 0
+                specValues.length = 0
+            }
+
+            if (specLabels.length > 0) {
                 const specifications = specLabels.map((label, index) => ({
                     product: product._id,
                     name: label,
@@ -470,21 +475,31 @@ router.put(
             updatedProduct.images = newImages
 
             product = await Product.findByIdAndUpdate( req.params.id, {$set: updatedProduct}, {new: true} )
-            if (specLabels.length > 0 && specLabels[0] != '') {
+
+            if (specLabels.length == 1 && specLabels[0] == '' ) {
+                specLabels.length = 0
+                specValues.length = 0
+                
+                await Specification.deleteMany({ product })
+            }
+
+            if (specLabels.length > 0) {
                 await Specification.deleteMany({ product })
                 
-                const specifications = specLabels.map((label, index) => {
-                    const value = specValues[index]
-                    if (label && value) {  // Only add the object if both label and value are not null or empty
-                        return {
-                            product: req.params.id,
-                            name: label,
-                            value: value
-                        };
-                    }
-                }).filter(Boolean)
+                if (specLabels.length > 0) {
+                    const specifications = specLabels.map((label, index) => {
+                        const value = specValues[index]
+                        if (label && value) {  // Only add the object if both label and value are not null or empty
+                            return {
+                                product: req.params.id,
+                                name: label,
+                                value: value
+                            };
+                        }
+                    }).filter(Boolean)
 
-                await Specification.insertMany(specifications)
+                    await Specification.insertMany(specifications)
+                }
             }
             return res.status(200).json({ success: true, message: "Product Updated Sucessfully" })
             
