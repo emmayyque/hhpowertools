@@ -352,7 +352,7 @@ const Products = () => {
             })
     
             const json = await resp.json()
-    
+            
             if (json.success) {
                 setResponse({
                     message: json.message
@@ -360,15 +360,9 @@ const Products = () => {
                 getProducts()
                 hidePanel()
             } else {
-                if (!json.success) {
-                    setResponse({
-                        error: json.message
-                    })
-                } else {
-                    setResponse({
-                        error: json.error
-                    })
-                }
+                setResponse({
+                    error: json.error
+                })
             }
     
             setTimeout(() => {
@@ -466,6 +460,8 @@ const Products = () => {
             })
     
             const json = await resp.json()
+
+            console.log(resp)
     
             if (json.success) {
                 setResponse({
@@ -474,16 +470,9 @@ const Products = () => {
                 getProducts()
                 hidePanel()
             } else {
-                console.log(json)
-                if (!json.success) {
-                    setResponse({
-                        error: json.message
-                    })
-                } else {
-                    setResponse({
-                        error: json.error
-                    })
-                }
+                setResponse({
+                    error: json.error
+                })
             }
     
             setTimeout(() => {

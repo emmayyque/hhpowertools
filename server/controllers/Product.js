@@ -346,7 +346,7 @@ router.post(
                 isActive: 1
             })
 
-            if (specLabels && specValues) {
+            if (specLabels.length > 0 && specLabels[0] != '') {
                 const specifications = specLabels.map((label, index) => ({
                     product: product._id,
                     name: label,
@@ -470,7 +470,7 @@ router.put(
             updatedProduct.images = newImages
 
             product = await Product.findByIdAndUpdate( req.params.id, {$set: updatedProduct}, {new: true} )
-            if (specLabels && specValues) {
+            if (specLabels.length > 0 && specLabels[0] != '') {
                 await Specification.deleteMany({ product })
                 
                 const specifications = specLabels.map((label, index) => {
@@ -779,7 +779,7 @@ router.delete(
 
             // Delete the Product in last
             product = await Product.findByIdAndDelete(req.params.id)        
-            return res.status(404).json({ succes: true, message: "Product Deleted Successfully" })
+            return res.status(404).json({ success: true, message: "Product Deleted Successfully" })
         } catch (error) {
             console.log(error.message)
             res.status(500).json({ error: "Internal Server Error" })
