@@ -81,7 +81,7 @@ const ProductCard = (props) => {
             {
                 props.product.averageRating && <span className="tag">Best Selling</span>
             }
-            <img src={ `${baseURL}${props.product.images[0].imageUrl}` } alt="Product Image" />
+            <Link to={`/shop/product/${props.product.name.split(" ").join("-")}`}><img src={ `${baseURL}${props.product.images[0].imageUrl}` } alt={props.product.name} /></Link>
             {
                 props.product.discount > 0 ? 
                 <span className='offer'>{ props.product.discount }% Off</span> :
@@ -89,7 +89,7 @@ const ProductCard = (props) => {
             }
         </div>
         <div className="card-body">
-            <h3>{ props.product.name }</h3>
+            <h3><Link to={`/shop/product/${props.product.name.split(" ").join("-")}`}>{ props.product.name }</Link></h3>
             <div className='row'>
                 <div className="prices">
                     {

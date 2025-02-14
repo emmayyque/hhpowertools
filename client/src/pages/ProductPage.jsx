@@ -29,7 +29,7 @@ const ProductPage = () => {
     getProductByName(prodName)
     getTopRatedProducts()
     document.title = `HH Power Tools | ${ prodName }`
-  }, [])
+  }, [params.prodName])
 
 
   const [ topRatedProducts, setTopRatedProducts ] = useState([])  
