@@ -123,9 +123,6 @@ const Header = (props) => {
         })
 
         const json = await resp.json()
-        console.log(json)
-        console.log(searchTerm)
-        console.log(category)
 
         if (json.success) {
             setFilteredProducts(json.data)
@@ -282,7 +279,7 @@ const Header = (props) => {
                             filteredProducts.length > 0 ? filteredProducts.map((product, index) => (
                                 <div className="sritem row gap2" key={index}>
                                     <div className="srimg">
-                                        <img src={`${product.imageUrl}`} alt="" />
+                                        <img src={`${baseURL}${product.images[0].imageUrl}`} alt="" />
                                     </div>
                                     <div className="srdet column">
                                         <h2>{ product.name }</h2>

@@ -33,7 +33,7 @@ const PanelItem = (props) => {
             <img src={ baseURL+props.image } alt="" />
         </div>
         <div className="panel-item-body">
-            <h3>{ props.name }</h3>
+            <h3>{ props.name.split(" ").slice(0, 7).join(" ") } ...</h3>
             {
                 props.discount > 0 ?
                 <>

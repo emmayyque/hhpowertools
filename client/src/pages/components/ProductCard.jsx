@@ -89,7 +89,7 @@ const ProductCard = (props) => {
             }
         </div>
         <div className="card-body">
-            <h3><Link to={`/shop/product/${props.product.name.split(" ").join("-")}`}>{ props.product.name }</Link></h3>
+            <h3><Link to={`/shop/product/${props.product.name.split(" ").join("-")}`}>{ props.product.name.split(" ").slice(0, 6).join(" ") } ...</Link></h3>
             <div className='row'>
                 <div className="prices">
                     {
