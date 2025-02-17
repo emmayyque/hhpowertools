@@ -838,7 +838,7 @@ li:hover {
   width: 100px;
   height: 100px;
   background-color: var(--primary-color-1);
-  border-radius: 50px;
+  border-radius: 12px;
   position: relative;
   transition: var(--transition);
 }
@@ -924,12 +924,12 @@ li:hover {
   width: 100%;
   justify-content: flex-start;
   align-items: stretch;
-  gap: 1rem;
+  gap: 12rem;
   flex-wrap: wrap;
 }
 
 .product-card {
-  width: 282px;
+  width: 223px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -946,7 +946,7 @@ li:hover {
 
 .card-image {
   width: 100%;
-  height: 250px;
+  height: 180px;
   background-color: var(--white-color);
   position: relative;
 }
@@ -978,6 +978,7 @@ li:hover {
   color: var(--white-color);
   background-color: var(--tag-color);
   padding: 2px 10px;
+  font-size: 0.8rem;
 }
 
 .card-body {
@@ -992,7 +993,7 @@ li:hover {
 
 .card-body > h3 {
   color: var(--black-color);
-  font-size: 1.19rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -1006,7 +1007,7 @@ li:hover {
 
 .actual-price {
   color: var(--primary-color-1);
-  font-size: 1.38rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
@@ -1019,13 +1020,21 @@ li:hover {
 
 .card-actions {
   justify-content: space-between;
-  align-items: stretch;
+  align-items: flex-end;
+  /* align-items: stretch; */
   flex-direction: row;
 }
 
 .card-actions .btn2,
 .card-actions .btn3 {
-  padding: 5px 11px;
+  font-size: 0.8rem;
+  padding: 3px 11px;
+  /* width: max-content; */
+}
+
+.card-actions .btn2 svg,
+.card-actions .btn3 svg {
+  display: none;
 }
 
 .card-actions p {
@@ -1198,7 +1207,7 @@ li:hover {
   height: 470px;
   border-radius: 20px;
   overflow: hidden;
-  background-color: #494949;
+  /* background-color: #494949; */
 }
 
 .banner-2 img {
@@ -2350,6 +2359,10 @@ li:hover {
     height: 370px;
   }
 
+  .product-card {
+    width: 220px;
+  }
+
   /* .product-card {
     width: 300px;
   }
@@ -2394,13 +2407,25 @@ li:hover {
   }
 
   .shop .left {
-    width: 30%;
+    width: 25%;
   }
 
   .shop .right {
-    width: 70%;
+    width: 75%;
   }
 
+  .product-card {
+    width: 212px;
+  }
+
+  .card-actions .btn2,
+  .card-actions .btn3 {
+    font-size: 0.8rem;
+    padding: 3px 9px;
+    /* width: max-content; */
+  }
+  
+  
   /* .product-card {
     width: 290px;
   }
@@ -2414,6 +2439,14 @@ li:hover {
     align-items: flex-start;
     gap: 20px;
   } */
+
+  .panel-item-image {
+    max-height: 50px;
+    max-width: 50px;
+    min-height: 50px;
+    min-width: 50px;
+    border-radius: 5px;
+  }
   
   .card-body > h3 {
     font-size: 1.1rem;
@@ -2583,9 +2616,9 @@ li:hover {
     padding: 5px 10px;
   }
 
-  /* .product-card {
-    width: 315px;
-  } */
+  .product-card {
+    width: 208px;
+  }
 
   .checkout > div > div:last-child {
     width: 60%;
@@ -2823,11 +2856,30 @@ li:hover {
     width: 100%;
   }
 
-  .product-card .card-body .card-actions {
+  /* .product-card .card-body .card-actions {
     flex-direction: row;
     width: 100%;
     justify-content: flex-end;
+  } */
+
+  .card-image {
+    width: 100%;
+    height: 250px;
+    background-color: var(--white-color);
+    position: relative;
   }
+
+  .card-actions {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .card-actions .btn2, 
+  .card-actions .btn3 {
+    font-size: 0.9rem;
+    padding: 4px 15px;
+  }
+
 
   .section-label {
     flex-direction: column;
