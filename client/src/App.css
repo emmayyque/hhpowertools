@@ -835,27 +835,30 @@ li:hover {
 }
 
 .categories-panel .category .cat-image {
-  width: 100px;
-  height: 100px;
-  background-color: var(--primary-color-1);
+  width: 200px;
+  height: 150px;
+  /* background-color: var(--primary-color-1); */
   border-radius: 12px;
   position: relative;
   transition: var(--transition);
+  overflow: hidden;
+  box-shadow: -3px 0px 5px rgb(0, 0, 0, 0.1);
 }
 
 .category:hover .cat-image {
-  scale: 1.1;
+  /* scale: 1.1; */
+  opacity: 0.5;
 }
 
 
 .cat-image img {
   height: 100%;
   width: 100%;
-  object-fit: contain;
-  position: absolute;
+  object-fit: cover;
+  /* position: absolute;
   bottom: 5%;
   right: 15%;
-  filter: drop-shadow(-3px 0px 2px rgb(0, 0, 0, 0.25));
+  filter: drop-shadow(-3px 0px 2px rgb(0, 0, 0, 0.25)); */
 }
 
 .category span {
