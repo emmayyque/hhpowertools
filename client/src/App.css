@@ -970,6 +970,8 @@ li:hover {
   background-image: linear-gradient(to right, var(--primary-color-1), var(--primary-color-2));
   background-clip: text;
   padding: 11px 13px;
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
 .card-image .offer {
