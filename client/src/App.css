@@ -2398,6 +2398,10 @@ li:hover {
     width: 205px;
   }
 
+  .banner-2 {
+    min-height: 350px;
+    max-height: 350px;
+  }
   
   .shop .left {
     width: 25%;
@@ -2440,7 +2444,8 @@ li:hover {
   }
 
   .banner-2 {
-    height: 248px;
+    min-height: 265px;
+    max-height: 265px;
   }
 
 
@@ -2612,9 +2617,10 @@ li:hover {
     height: 200px;
   }
 
-  .banner-2 {
-    height: 262px;
-  }
+  /* .banner-2 {
+    min-height: 265px;
+    max-height: 265px;
+  } */
 
   .shop {
     flex-direction: column-reverse;
