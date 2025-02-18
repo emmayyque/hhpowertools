@@ -30,7 +30,7 @@ const CategoriesPanel = () => {
     // })
 
   return (
-    <div className='categories-panel row gap 3'>
+    <div className='categories-panel row gap3'>
         {
             catData.categories && catData.categories.map((category, index) => (
                 <Link to={`/shop/${category.name.split(' ').join('-').toLowerCase()}`} key={index}>
