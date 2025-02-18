@@ -10,24 +10,25 @@ const baseURL = import.meta.env.VITE_NODE_URL
 const CategoriesPanel = () => {
     const catData = useContext(CategoryContext)
     
-    gsap.registerPlugin(ScrollTrigger)
+    // gsap.registerPlugin(ScrollTrigger)
 
-    // useGSAP(() => {
-    //     gsap.from(".categories-panel .category", {
-    //         y: 100,
-    //         opacity: 0,
-    //         duration: 2,
-    //         stagger: 2,
-    //         scrollTrigger: {
-    //             trigger: ".categories-panel .category",
-    //             scroller: "body",
-    //             // markers: true,
-    //             start: "top 80%",
-    //             end: "top 60%",
-    //             scrub: 2,
-    //         }
-    //     })
-    // })
+    useGSAP(() => {
+        gsap.from(".categories-panel .category", {
+            y: 100,
+            opacity: 0,
+            delay: 0.2,
+            duration: 0.6,
+            stagger: 0.4,
+            // scrollTrigger: {
+            //     trigger: ".categories-panel .category",
+            //     scroller: "body",
+            //     // markers: true,
+            //     start: "top 80%",
+            //     end: "top 60%",
+            //     scrub: 2,
+            // }
+        })
+    })
 
   return (
     <div className='categories-panel row gap3'>

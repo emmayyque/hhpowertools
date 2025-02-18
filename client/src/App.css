@@ -361,10 +361,10 @@ li:hover {
   transition: var(--transition);
   position: relative;
   /* overflow: hidden; */
-  opacity: 0;
   transition: var(--transition);
   position: relative;
-  animation: fadeIn 0.7s ease-in-out 0.1s forwards;
+  opacity: 0;
+  animation: fadeIn 0.7s ease-in-out 0.2s forwards;
 }
 
 @keyframes fadeIn {
@@ -785,6 +785,7 @@ li:hover {
 .navbar {
   background-color: var(--secondary-color);
   padding: 11px var(--padding);
+  opacity: 0;
   animation: fadeIn 1s ease-in-out 0.1s forwards;
 }
 

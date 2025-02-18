@@ -28,7 +28,6 @@ const HeroBanner = () => {
     
     setTimeout(() => {
       setIsLoading(false)
-      
     }, 1500);
 
     const [ currentIndex, setCurrentIndex ] = useState(0)
