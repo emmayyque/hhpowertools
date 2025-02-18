@@ -46,7 +46,7 @@ const LandingPage = () => {
     const [isLoading, setIsLoading] = useState(true)
     setTimeout(() => {
         setIsLoading(false)
-    }, 3000)
+    }, 1500);
 
     let timeline = gsap.timeline()
 

@@ -23,7 +23,7 @@ const Store = () => {
 
     setTimeout(() => {
       setIsLoading(false)
-    }, 4000);
+    }, 1500);
 
     const toCapitalCase = (sentence) => {
       return sentence
