@@ -777,6 +777,11 @@ li:hover {
   border: none;
 }
 
+.mob-navbar ul li a {
+  min-width: 100%;
+  max-width: 100%;
+}
+
 .navbar {
   background-color: var(--secondary-color);
   padding: 11px var(--padding);
@@ -2366,6 +2371,11 @@ li:hover {
     max-height: 430px;
   }
 
+  .categories-panel .category .cat-image {
+    width: 150px;
+    height: 115px;
+  }
+
   .banner-1 {
     height: 360px;
   }
@@ -2377,6 +2387,8 @@ li:hover {
   .product-card {
     width: 220px;
   }
+
+  
 
   /* .product-card {
     width: 300px;
@@ -2396,6 +2408,11 @@ li:hover {
 @media only screen and (max-width: 1366px) {
   .product-card {
     width: 205px;
+  }
+
+  .categories-panel .category .cat-image {
+    width: 150px;
+    height: 115px;
   }
 
   .banner-2 {
@@ -2438,6 +2455,12 @@ li:hover {
     min-height: 340px;
     max-height: 340px;
   }
+
+  .categories-panel .category .cat-image {
+    width: 125px;
+    height: 100px;
+  }
+
 
   .banner-1 {
     height: 270px;
