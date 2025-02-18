@@ -352,7 +352,6 @@ li:hover {
 
 @keyframes loaderAnim {
   100% { transform: rotate(1200deg); }
-  
 }
 
 .header {
@@ -2394,6 +2393,28 @@ li:hover {
   } */
 }
 
+@media only screen and (max-width: 1366px) {
+  .product-card {
+    width: 205px;
+  }
+
+  
+  .shop .left {
+    width: 25%;
+  }
+
+  .shop .right {
+    width: 75%;
+  }
+
+  .card-actions .btn2,
+  .card-actions .btn3 {
+    font-size: 0.8rem;
+    padding: 3px 7px;
+    /* width: max-content; */
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   :root{
     --padding: 50px !important;
@@ -2422,24 +2443,12 @@ li:hover {
     height: 248px;
   }
 
-  .shop .left {
-    width: 25%;
-  }
-
-  .shop .right {
-    width: 75%;
-  }
 
   .product-card {
     width: 212px;
   }
 
-  .card-actions .btn2,
-  .card-actions .btn3 {
-    font-size: 0.8rem;
-    padding: 3px 9px;
-    /* width: max-content; */
-  }
+  
   
   
   /* .product-card {
