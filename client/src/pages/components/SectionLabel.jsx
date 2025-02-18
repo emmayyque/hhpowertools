@@ -74,13 +74,13 @@ const SectionLabel = (props) => {
             </ul>
           )
         }
-        {
+        {/* {
           props.count && (
             <div className="result-count">
               {props.count} Products Found
             </div>
           )
-        }
+        } */}
         {
           props.features && (
             <div className="filter row gap1">
