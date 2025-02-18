@@ -55,8 +55,8 @@ const ProductInfo = (props) => {
     useEffect(() => {
         setTimeout(() => {
             setResponse({})
-            }, 5000);
-    }, [])
+        }, 3000);
+    }, [response])
 
 
     setTimeout(() => {
@@ -67,7 +67,6 @@ const ProductInfo = (props) => {
         e.preventDefault()
         addToCartHandler()
         navigate('/shop/checkout')
-        // window.location.reload();
     }
 
   return (

@@ -54,8 +54,8 @@ const ProductCard = (props) => {
     useEffect(() => {
         setTimeout(() => {
             setResponse({})
-        }, 8000);
-    }, [])
+        }, 3000);
+    }, [response])
 
 
     // const productViewHandler = (e) => {

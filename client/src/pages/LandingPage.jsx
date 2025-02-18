@@ -46,12 +46,12 @@ const LandingPage = () => {
     const [isLoading, setIsLoading] = useState(true)
     setTimeout(() => {
         setIsLoading(false)
-    }, 50)
+    }, 3000)
 
     let timeline = gsap.timeline()
 
   return (
-    isLoading ? '' :
+    isLoading ? <Loader /> :
     <>  
         <Helmet>
             <title>HH Power Tools</title>

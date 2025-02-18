@@ -8,6 +8,7 @@ import Panel from './components/Panel'
 import { useContext } from 'react'
 import ProductContext from '../context/products/ProductContext'
 import { useParams } from 'react-router-dom'
+import Loader from './components/Loader';
 const baseURL = import.meta.env.VITE_NODE_URL
 
 const ProductPage = () => {
@@ -78,15 +79,13 @@ const ProductPage = () => {
     }
 }
   
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 100)
-  }, [])
+setTimeout(() => {
+  setIsLoading(false)
+}, 3000)
 
 
   return (
-    isLoading ? '' :
+    isLoading ? <Loader /> :
     <>
       <Header />        
       <div className="product-page">

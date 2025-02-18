@@ -231,9 +231,7 @@ const Header = (props) => {
                                 <Icons.FaXmark className="icon" id={`${item.id}`} onClick={removeFromCartHandler}/>
                             </div>
                         ))
-                        
-                    ) : 
-                    <p>There is no items in the cart !!</p>
+                    ) : <p>There is no items in the cart !!</p>
                 }
             </div>
             <div className="cactions row gap1">
@@ -251,10 +249,13 @@ const Header = (props) => {
                     <img src={Logo} alt="HH-PowerTools-Logo" />
                 </Link>
             </div>
-            <div className="mob-logo">
-                <Link to="/">
-                    <img src={MobLogo} alt="HH-PowerTools-Logo" />
-                </Link>
+            <div className="mob-container row gap0">
+                <Icons.FaBars className='icon mob-icon' onClick={mobNavbarHandlder}/>
+                <div className="mob-logo row">
+                    <Link to="/">
+                        <img src={MobLogo} alt="HH-PowerTools-Logo" />
+                    </Link>
+                </div>
             </div>
             <div className="searchbar row">
                 <form action="" className='row'>
@@ -330,7 +331,6 @@ const Header = (props) => {
             </div>
             <div className="actions row gap2">
                 <div className="row gap1 align-start">
-                    <Icons.FaBars className='icon mob-icon' onClick={mobNavbarHandlder}/>
                     <Icons.FaMagnifyingGlass className='icon mob-icon' onClick={mobSearchBarHandler}/>
                     <Link to={"/account"}><Icons.FaUser className='icon'/></Link>
                     <div className="cartIco row gap0" onClick={triggerQuickCart}>

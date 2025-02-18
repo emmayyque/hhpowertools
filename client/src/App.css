@@ -333,16 +333,26 @@ li:hover {
 
 .loader {
   position: fixed;
-  z-index: 10;
+  z-index: 1000;
   height: 100%;
   width: 100%;
-  background-color: var(--white-color-alpha);
+  top: 0;
+  left: 0;
+  gap: 1rem;
+  background-color: var(--white-color);
   backdrop-filter: blur(20px);
 }
 
 .loader img {
-  width: 300px;
+  width: 80px;
+  height: 80px;
   transition: 0.2s ease-in-out 0.1s;
+  animation: loaderAnim 5s ease-in-out 0.1s infinite;
+}
+
+@keyframes loaderAnim {
+  100% { transform: rotate(1200deg); }
+  
 }
 
 .header {
@@ -381,6 +391,7 @@ li:hover {
 }
 
 .mob-icon {
+  color: var(--white-color);
   display: none;
 }
 
@@ -2808,6 +2819,10 @@ li:hover {
     max-height: 180px;
   }
 
+  .cartIco > span {
+    display: none;
+  }
+
   .cart-popup {
     width: 75%;
   }
@@ -2834,6 +2849,11 @@ li:hover {
     font-weight: 400;
     color: var(--secondary-color);
     font-size: 1rem;
+  }
+  
+  .categories-panel .category .cat-image {
+    width: 115px;
+    height: 90px;
   }
 
   .banner-1 {
@@ -2972,6 +2992,10 @@ li:hover {
   .discount > div span {
     font-size: 0.8rem;
     line-height: 1rem;
+  }
+
+  .result-count { 
+    display: none;
   }
   
   .product-gallery .indicators {

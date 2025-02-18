@@ -6,6 +6,7 @@ import Pagination from './Pagination'
 import { useContext } from 'react'
 import ProductContext from '../../context/products/ProductContext'
 import { useParams } from 'react-router-dom'
+import Loader from './Loader'
 const baseURL = import.meta.env.VITE_NODE_URL
 
 const Store = () => {
@@ -22,7 +23,7 @@ const Store = () => {
 
     setTimeout(() => {
       setIsLoading(false)
-    }, 50);
+    }, 4000);
 
     const toCapitalCase = (sentence) => {
       return sentence
@@ -202,7 +203,7 @@ const Store = () => {
 
 
   return (
-    isLoading ? '' :
+    isLoading ? <Loader /> :
     <div className='store'>
       <SectionLabel heading="Shop" count={products.length} features={"Yes"} setSortingFilter={setSortingFilter} />
       <div className="products-area row">
