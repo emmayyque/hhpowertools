@@ -35,7 +35,7 @@ const OrderSummary = ({ billing }) => {
     const orderTotal = () => {
         let total = 0
         total += getTotal()
-        total += shippingCost
+        total += regionFee + weightFee
 
         return total
     }

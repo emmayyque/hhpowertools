@@ -46,7 +46,7 @@ const CartSummary = (props) => {
 
     const getCartTotal = () => {
         let total = getTotal()
-        total += data.shippingCost
+        total += data.regionFee + data.weightFee
         return total
     }
 
