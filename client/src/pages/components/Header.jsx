@@ -83,19 +83,22 @@ const Header = (props) => {
         setSearchValues({ ...searchValues, [name]: value })
     }
 
-    const searchHandler = (e) => {
+    const searchInputHandler = (e) => {
         const { name, value } = e.target
-        
-        if ( searchValues.category == 0) {
-            searchProduct(value)
-        } else {
-            searchProductByCategory(value, searchValues.category)
-        }
-
-        if ( value == '' ) {
-            setFilteredProducts(null)
-        }
+        setSearchValues({...searchValues, [name]: value})
     }
+
+    useEffect(() => {
+        if (searchValues.searchTerm == '') {
+            setFilteredProducts(null)
+        } else {
+            if (searchValues.category == 0) {
+                searchProduct(searchValues.searchTerm)
+            } else {
+                searchProductByCategory(searchValues.searchTerm, searchValues.category)
+            }
+        }
+    }, [searchValues])
 
     const searchProduct = async (searchTerm) => {
         const resp = await fetch(`${baseURL}/api/product/searchproduct/${searchTerm}`, {
@@ -184,6 +187,8 @@ const Header = (props) => {
                     transform: "translateY(-100%)"
                 }
             )
+            setSearchValues({...initialValues})
+            setFilteredProducts(null)
         }
     }
 
@@ -212,6 +217,25 @@ const Header = (props) => {
     
   return (
     <>
+        {
+            filteredProducts && 
+            <div className="search-results">
+                {
+                    filteredProducts.length > 0 ? filteredProducts.map((product, index) => (
+                        <div className="sritem row gap2" key={index}>
+                            <div className="srimg">
+                                <img src={`${baseURL}${product.images[0].imageUrl}`} alt="" />
+                            </div>
+                            <div className="srdet column">
+                                <h2>{ product.name }</h2>
+                                <span className="actual-price">Rs. { getFormat(getDiscountedPrice(product.costPrice, product.discount)) }</span>
+                            </div>
+                        </div>
+                    )) :
+                    <p>No results found with the given term</p>
+                }
+            </div>
+        }   
         <div className="cart-popup" style={quickCartStyle}>
             <div className="clabel row gap1">
                 <h3>Quick Cart</h3>
@@ -270,28 +294,9 @@ const Header = (props) => {
                         }
                     </select>
                     <div className="divider"></div>
-                    <input type="text" name="searchTerm" id="searchTerm" placeholder='Search something here' onChange={searchHandler}/>
+                    <input type="text" name="searchTerm" id="searchTerm" placeholder='Search something here' onChange={searchInputHandler}/>
                 </form>
                 <Icons.FaMagnifyingGlass className='icon'/>
-                {
-                    filteredProducts && 
-                    <div className="search-results">
-                        {
-                            filteredProducts.length > 0 ? filteredProducts.map((product, index) => (
-                                <div className="sritem row gap2" key={index}>
-                                    <div className="srimg">
-                                        <img src={`${baseURL}${product.images[0].imageUrl}`} alt="" />
-                                    </div>
-                                    <div className="srdet column">
-                                        <h2>{ product.name }</h2>
-                                        <span className="actual-price">Rs. { getFormat(getDiscountedPrice(product.costPrice, product.discount)) }</span>
-                                    </div>
-                                </div>
-                            )) :
-                            <p>No results found with the given term</p>
-                        }
-                    </div>
-                }
             </div>
             <div className="mob-searchbar row" style={mobSearchBarStyle}>
                 <form action="" className='row'>
@@ -306,28 +311,9 @@ const Header = (props) => {
                         }
                     </select>
                     <div className="divider"></div>
-                    <input type="text" name="searchTerm" id="searchTerm" placeholder='Search something here' onChange={searchHandler}/>
+                    <input type="text" name="searchTerm" id="searchTerm" placeholder='Search something here' value={searchValues.searchTerm} onChange={searchInputHandler}/>
                 </form>
                 <Icons.FaXmark className='icon' onClick={mobSearchBarHandler}/>
-                {
-                    // prodData.filteredProducts && 
-                    // <div className="search-results">
-                    //     {
-                    //         prodData.filteredProducts.length > 0 ? (prodData.filteredProducts).map((product, index) => (
-                    //             <div className="sritem row gap2" key={index}>
-                    //                 <div className="srimg">
-                    //                     <img src={`${product.image_url}`} alt="" />
-                    //                 </div>
-                    //                 <div className="srdet column">
-                    //                     <h2>{ product.name }</h2>
-                    //                     <span className="actual-price">Rs. { getFormat(getDiscountedPrice(product.costPrice, product.discount)) }</span>
-                    //                 </div>
-                    //             </div>
-                    //         )) :
-                    //         <p>No results found with the given term</p>
-                    //     }
-                    // </div>
-                }
             </div>
             <div className="actions row gap2">
                 <div className="row gap1 align-start">

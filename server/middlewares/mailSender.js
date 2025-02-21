@@ -1,8 +1,6 @@
 const nodemailer = require('nodemailer')
 require('dotenv').config()
 
-console.log("SMTP Config:", process.env.NM_HOST, process.env.NM_PORT, process.env.NM_USER);
-
 const transporter = nodemailer.createTransport(
     {
         secure: true,
