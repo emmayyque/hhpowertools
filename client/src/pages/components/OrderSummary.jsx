@@ -4,11 +4,13 @@ import * as Icons from 'react-icons/fa6'
 import CartContext from '../../context/cart/CartContext'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import OrderProcessing from './OrderProcessing'
 
 const baseURL = import.meta.env.VITE_NODE_URL
 
 const OrderSummary = ({ billing }) => {
-    const { shippingCost, cartItems, setCartItems } = useContext(CartContext)
+    const { shippingCost, cartItems, setCartItems, getTotalWeight, getRegionFeeByRegion, weightFee, regionFee, setWeightFee, setRegionFee } = useContext(CartContext)
+    const [ isLoading, setIsLoading ] = useState(false)
     const navigate = useNavigate()
 
     const getFormat = (value) => {
@@ -64,6 +66,7 @@ const OrderSummary = ({ billing }) => {
                 firstName: billing.formValues.firstName,
                 lastName: billing.formValues.lastName,
                 email: billing.formValues.email,
+                phone: billing.formValues.phone,
                 street: billing.formValues.street,
                 area: billing.formValues.area,
                 city: billing.formValues.city,
@@ -76,10 +79,11 @@ const OrderSummary = ({ billing }) => {
         })
 
         const json = await resp.json()
+        console.log(resp)
+        console.log(json)
 
         if (json.success) {
             setResponse({ orderNo: json.orderNo })
-            clearCart()
             billing.setFormValues({...billing.initialValues})
         } else {
             setResponse({ error: json.error })
@@ -115,7 +119,6 @@ const OrderSummary = ({ billing }) => {
     
             if (json.success) {
                 setResponse({ orderNo: json.orderNo })
-                clearCart()
                 billing.setFormValues({...billing.initialValues})
             } else {
                 setResponse({ error: json.error })
@@ -139,7 +142,7 @@ const OrderSummary = ({ billing }) => {
                 body: JSON.stringify({
                     address: billing.selectedAddress,
                     orderItems: orderItems,
-                    shippingCost: shippingCost,
+                    shippingCost: weightFee + regionFee,
                     totalBill: getTotal()
                 })
             })
@@ -148,7 +151,6 @@ const OrderSummary = ({ billing }) => {
     
             if (json.success) {
                 setResponse({ orderNo: json.orderNo })
-                clearCart()
                 billing.setFormValues({...billing.initialValues})
             } else {
                 setResponse({ error: json.error })
@@ -168,8 +170,9 @@ const OrderSummary = ({ billing }) => {
                 } else {
                     orderAsCustomerWithNewAddress()
                 }
-
+                setIsLoading(true)
                 clearCart()
+                clearShippingCost()
             }
         }
     }, [billing.formErrors])
@@ -182,8 +185,9 @@ const OrderSummary = ({ billing }) => {
         } else if (!billing.isBillingDetails) {
             if (billing.selectedAddress) {
                 orderAsCustomer()
-
+                setIsLoading(true)
                 clearCart()
+                clearShippingCost()                
             } else {
                 setResponse({
                     error: "Please select an address first"
@@ -217,9 +221,7 @@ const OrderSummary = ({ billing }) => {
 
         const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
-        if (!values.email) {
-            errors.email = 'Email is required'
-        } else if (!emailRegex.test(values.email)) {
+        if (values.email && !emailRegex.test(values.email)) {
             errors.email = 'Enter a valid email address'
         }
 
@@ -257,22 +259,45 @@ const OrderSummary = ({ billing }) => {
         setCartItems([])
     }
 
+    const clearShippingCost = () => {
+        setWeightFee(0)
+        setRegionFee(0)
+    }
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 5000)
+    }, [isLoading])
+
+    useEffect(() => {
+        getTotalWeight()
+        if (billing.formValues.state != '0') {
+            getRegionFeeByRegion(billing.formValues.state)
+        } else if (billing.formValues.state == '0') {
+            setRegionFee(0)
+        }
+    }, [cartItems, billing.formValues])
+
   return (
     <div className='order-summary summary'>
-        { response.errors && <div className='alertError'>{response.errors}</div> }
-        { response.error && <div className='alertError'>{response.error}</div> }
-        {/* { response.message && <div className='alertSuccess'>{response.message}</div> } */}
+        { 
+            isLoading ? <OrderProcessing /> :
+            <>
+            { response.errors && <div className='alertError'>{response.errors}</div> }
+            { response.error && <div className='alertError'>{response.error}</div> }
+            </>
+        }
         { response.orderNo && 
             <div className="overlay">
                 <div className="modal">
                     <h3 className="page-heading">Order Booked Successfully!</h3>
                     <hr />
-                    <p>You can track your <span className='orderNo'>Order-{response.orderNo}</span> status at <Link to={"/Tracking"}>http://localhost:5173/Tracking</Link></p>
+                    <p>You can track your <span className='orderNo'>Order-{response.orderNo}</span> status at <Link to={"/tracking"}>https://hhpowertools.vercel.app/tracking</Link></p>
                     <Link to={"/"} className='btn2' onClick={cancelHandler}>Cancel</Link>
                 </div>
             </div>
         }
-        
         <div className="s-item row">
             <span>Products</span>
             <span>Sub Total</span>
@@ -295,7 +320,7 @@ const OrderSummary = ({ billing }) => {
         </div>  
         <div className="s-item row">
             <span>Shipping Cost</span>
-            { getFormat(shippingCost) } Rs.
+            { getFormat(weightFee + regionFee) } Rs.
         </div>        
         <div className="s-total row">
             <span>Total Order Bill</span>

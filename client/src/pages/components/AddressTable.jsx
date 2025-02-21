@@ -3,7 +3,7 @@ import CartContext from '../../context/cart/CartContext'
 const baseURL = import.meta.env.VITE_NODE_URL
 
 const AddressTable = ({ userAddresses, setSelectedAddress }) => {
-    const { shippingCost, setShippingCost } = useContext(CartContext)
+    const { regionFee, setRegionFee } = useContext(CartContext)
 
     const addressHandler = async (e) => {
         const { name, id, region, value } = e.target
@@ -16,10 +16,9 @@ const AddressTable = ({ userAddresses, setSelectedAddress }) => {
             })
 
             const json = await resp.json()
-            if (json.success) {
-                
+            if (json.success) {                
                 setSelectedAddress(id)
-                setShippingCost(json.data.fee)
+                setRegionFee(json.data.fee)
             } else {
                 console.log(json.error)
             }

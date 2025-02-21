@@ -11,7 +11,7 @@ const Product = require('../models/Product')
 require('dotenv').config()
 
 
-const createCustomer = async (firstName, lastName, email) => {
+const createCustomer = async (firstName, lastName, email, phone) => {
     try {
         let randNum = Math.random() * 100001
         const user = await User.findOne({ email: email })
@@ -29,6 +29,7 @@ const createCustomer = async (firstName, lastName, email) => {
             firstName: firstName,
             lastName: lastName,
             email: email,
+            phone: phone,
             username: username,
             password: hashedPass,
             role: 2
@@ -413,7 +414,7 @@ router.post(
     [
         body('firstName', 'First name cannot be shorter than 3 characters').isLength({ min: 3 }),
         body('lastName', 'Last name cannot be shorter than 3 characters').isLength({ min: 3 }),
-        body('email', 'Enter a valid email').isEmail(),
+        body('phone', 'Phone No is required').exists(),
         body('street', 'Street address cannot be shorter then the 7 characters').isLength({ min: 7 }),
         body('area', 'Area cannot be shorter than 5 characters').isLength({ min: 5 }),
         body('city', 'City cannot be shorter than 3 characters').isLength({ min: 3 }),
@@ -426,9 +427,14 @@ router.post(
                 return res.status(400).json({ success: false, error: errors.array() })
             }
 
-            const { firstName, lastName, email, street, area, city, state, orderItems, shippingCost, totalBill } = req.body
+            const { firstName, lastName, email, phone, street, area, city, state, orderItems, shippingCost, totalBill } = req.body
 
-            let customer = await createCustomer(firstName, lastName, email)
+            customEmail = email
+            if ( !email ) {
+                customEmail = '+$' + firstName + lastName + '@gmail.com'
+            }
+
+            let customer = await createCustomer(firstName, lastName, customEmail, phone )
             if ( customer == null ) {
                 return res.status(500).json({ error: "Internal server error" })
             }
@@ -455,15 +461,19 @@ router.post(
                 address: address,
                 orderNo: orderNo
             })
+ 
+            const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
-            // Your order is placed with <strong>Order No: HHPT123456789</strong>. You will receive confirmation shortly.
-            // Send confirmation mail to the customer
-            // Prepare the subject:
-            const name = firstName + ' ' + lastName
-            const subject = `Order ${orderNo} Placed at HHPowerTools`
-            const message1 = "Thank you for purchasing at HH Power Tools!"
-            const message2 = `Your order is placed with <strong>Order No: ${orderNo}</strong>. You will receive confirmation shortly`
-            sendMailToCustomer(name, email, subject, message1, message2, orderNo)
+            if (emailRegex.test(email)) {
+                // Your order is placed with <strong>Order No: HHPT123456789</strong>. You will receive confirmation shortly.
+                // Send confirmation mail to the customer
+                // Prepare the subject:           
+                const name = firstName + ' ' + lastName
+                const subject = `Order ${orderNo} Placed at HHPowerTools`
+                const message1 = "Thank you for purchasing at HH Power Tools!"
+                const message2 = `Your order is placed with <strong>Order No: ${orderNo}</strong>. You will receive confirmation shortly`
+                sendMailToCustomer(name, email, subject, message1, message2, orderNo)
+            }
             
             return res.status(200).json({ success: true, orderNo })
             

@@ -83,6 +83,7 @@ const CartSummary = (props) => {
         getShippingCosts()
     }, [])
 
+
     const [ customStyle, setCustomStyle ] = useState({
         transform: "translateY(-65px)", 
         opacity: 0
@@ -95,25 +96,30 @@ const CartSummary = (props) => {
         })
     }
 
-    const getCostHandler = async (e) => {
+    const getShippingCost = (e) => {
         let id = e.target.value
-        const resp = await fetch(`${baseURL}/api/shippingfee/getone/${id}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
+        // data.getShippingEstimate(id)
+    }    
 
-        const json = await resp.json()
-
-        if (json.success) {
-            data.setShippingCost(json.data.fee)
-        } else {
-            console.log(json.error)
-        }
+    const initialValues = { state: '' }
+    const [ formValues, setFormValues ] = useState({...initialValues})
+    const inputHandler = (e) => {
+        e.preventDefault()
+        const { name, value } = e.target
+        console.log(formValues)
+        setFormValues({...formValues, [name]: value})
     }
     
     
+    useEffect(() => {
+        data.getTotalWeight()
+        if (formValues.state != '') {
+            data.getRegionFeeById(formValues.state)
+        } else if (formValues.state == '') {
+            data.setRegionFee(0)
+        }
+    }, [data.cartItems, formValues])
+
   return (
     isLoading ? '' :
     <div className='cart-summary summary'>
@@ -138,7 +144,7 @@ const CartSummary = (props) => {
             <div>
                 <p onClick={getShipEstimateHandler}>Get Shipping Estimate +</p>
                 <form action="" style={customStyle}>
-                    <select name="state" id="state" defaultValue={0} onChange={getCostHandler} >
+                    <select name="state" id="state" defaultValue={0} onChange={inputHandler} >
                         <option value="0" disabled>Select State</option>
                         {
                             states && states.map((state, index) => (
@@ -149,7 +155,7 @@ const CartSummary = (props) => {
                 </form>
             </div>
         </span>
-        { getFormat(data.shippingCost) } Rs.
+        { getFormat(data.regionFee + data.weightFee) } Rs.
       </div>
       <div className="s-total row">
         <span>Total</span>

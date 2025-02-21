@@ -9,6 +9,7 @@ const ShippingFee = require('../controllers/ShippingFee')
 const Order = require('../controllers/Order')
 const Banner = require('../controllers/Banner')
 const Address = require('../controllers/Address')
+const WeightFee = require('../controllers/WeightFee')
 
 
 
@@ -20,5 +21,6 @@ router.use('/shippingfee', ShippingFee)
 router.use('/order', Order)
 router.use('/banner', Banner)
 router.use('/address', Address)
+router.use('/weightfee', WeightFee)
 
 module.exports = router

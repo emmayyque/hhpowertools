@@ -12,6 +12,7 @@ const ProductSchema = new Schema({
     features: { type: String },
     applications: { type: String },
     quantity: { type: Number, required: true },
+    weight: { type: String, required: true },
     costPrice: { type: Number, required: true },
     discount: { type: Number, required: true, default: 0 },
     images: [ImageSchema],

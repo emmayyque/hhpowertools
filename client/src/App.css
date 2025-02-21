@@ -331,7 +331,7 @@ li:hover {
 }
 
 
-.loader {
+.loader, .processing {
   position: fixed;
   z-index: 1000;
   height: 100%;
@@ -339,11 +339,20 @@ li:hover {
   top: 0;
   left: 0;
   gap: 1rem;
+}
+
+.loader {
   background-color: var(--white-color);
   backdrop-filter: blur(20px);
 }
 
-.loader img {
+.processing {
+  background-color: var(--white-color-alpha);
+  backdrop-filter: blur(20px);
+}
+
+.loader img,
+.processing img {
   width: 80px;
   height: 80px;
   animation: loaderAnim 2s ease-in-out 0.1s infinite;
@@ -1246,19 +1255,20 @@ li:hover {
 }
 
 .section-label .filter {
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 50px;
   background-color: var(--white-color);
 }
 
 .section-label .filter select {
-  font-size: 1rem;
+  /* width: 50%; */
+  font-size: 0.8rem;
   color: var(--secondary-color);
 }
 
 .section-label .filter .icon {
   color: var(--primary-color-1);
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .store .products-area {
@@ -1959,6 +1969,7 @@ li:hover {
   justify-content: space-between;
   padding: 15px 0px;
   border-bottom: 1px solid var(--secondary-color-light);
+  gap: 5rem;
 }
 
 .s-item > p {
@@ -2945,8 +2956,8 @@ li:hover {
 
 
   .section-label {
-    flex-direction: column;
-    align-items: flex-start;
+    /* flex-direction: column;
+    align-items: flex-start; */
   }
 
   .section-label .filter {

@@ -415,6 +415,7 @@ const Orders = () => {
                                 <th>Items</th>
                                 <th>Total Bill</th>
                                 <th>Customer</th>
+                                <th>Phone</th>
                                 <th>Address</th>
                                 <th>Status</th>
                                 <th>Created At</th>
@@ -431,6 +432,7 @@ const Orders = () => {
                                         </td>
                                         <td>Rs { getFormat(order.totalBill) }</td>
                                         <td>{ order.customer && order.customer.firstName + ' ' + order.customer.lastName }</td>
+                                        <td>{ order.customer && order.customer.phone }</td>
                                         <td>{ order.address && order.address.street + ' ' + order.address.area + ' ' + order.address.city }</td>
                                         <td>
                                             <span className={`${styles.badge} ${ order.status == 1 ? `${styles.warningBadge}` : order.status == 2 ? `${styles.successBadge}` : order.status == 3 ? `${styles.primaryBadge}` : '' }`}>

@@ -89,8 +89,8 @@ const SectionLabel = (props) => {
                 <option value="1">Sort By Popularity</option>
                 <option value="2">Sort By Average Rating</option>
                 <option value="3">Sort By Latest</option>
-                <option value="4">Sort By Price: High to Low</option>
-                <option value="5">Sort By Price: Low to High</option>
+                <option value="4">Sort By High to Low</option>
+                <option value="5">Sort By Low to High</option>
               </select>
               <Icons.FaFilter className='icon' />
             </div>

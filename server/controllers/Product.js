@@ -299,6 +299,7 @@ router.post(
     [
         body('name', 'Name cannot be less than 5 characters').isLength({ min: 5 }),
         body('quantity', 'Quantity must be a numeric value').isNumeric(),
+        body('weight', 'Weight cannot be blank').exists(),
         body('costPrice', 'Cost Price must be a numeric value').isNumeric(),
         body('discount', 'Discount value can be in between (0-100)').isFloat({ min: 0, max: 100 }),
         body('category', 'Category must be selected').exists()
@@ -326,7 +327,7 @@ router.post(
                 return res.status(400).json({ success: false, error: "Product with this name already exists"})
             }
 
-            const { name, description, features, applications, quantity, costPrice, discount, category, specLabels, specValues } = req.body
+            const { name, description, features, applications, quantity, weight, costPrice, discount, category, specLabels, specValues } = req.body
             
             let imagesArr = []
             if ( req.files ) {
@@ -340,6 +341,7 @@ router.post(
                 features: features,
                 applications: applications,
                 quantity: quantity,
+                weight: weight,
                 costPrice: costPrice, 
                 discount: discount,
                 images: imagesArr,
@@ -425,6 +427,7 @@ router.put(
         body('name', 'Name cannot be less than 5 characters').isLength({ min: 5 }),
         body('quantity', 'Quantity must be a numeric value').isNumeric(),
         body('quantity', 'Quantity must be a numeric value').isFloat({ min: 1 }),
+        body('weight', 'Weight cannot be blank').exists(),
         body('costPrice', 'Cost Price must be a numeric value').isNumeric(),
         body('discount', 'Discount value can be in between (0-100)').isFloat({ min: 0, max: 100 }),
         body('category', 'Category must be selected').exists()
@@ -456,7 +459,7 @@ router.put(
             }
 
             const updatedProduct = {}
-            const { name, description, features, applications, quantity, costPrice, discount, category, specLabels, specValues } = req.body
+            const { name, description, features, applications, quantity, weight, costPrice, discount, category, specLabels, specValues } = req.body
             
             // let newImages = product.images
             let newImages = loadPrevImages(product)
@@ -466,6 +469,7 @@ router.put(
             if ( features ) { updatedProduct.features = features }
             if ( applications ) { updatedProduct.applications = applications }
             if ( quantity ) { updatedProduct.quantity = quantity }
+            if ( weight ) { updatedProduct.weight = weight }
             if ( costPrice ) { updatedProduct.costPrice = costPrice }
             if ( discount ) { updatedProduct.discount = discount }
             if ( category ) { updatedProduct.category = category }

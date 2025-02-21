@@ -280,6 +280,7 @@ const Products = () => {
         costPrice: '',
         discount: '',
         quantity: '',
+        weight: '',
         category: 0,
         image_url: '',
     }
@@ -520,6 +521,10 @@ const Products = () => {
             errors.quantity = 'Quantity can be numeric only'
         }
 
+        if (!values.weight) {
+            errors.weight = 'Weight field is required'
+        }
+
         if (!values.category) {
             errors.category = 'Category must be selected'
         }
@@ -695,6 +700,11 @@ const Products = () => {
                                     <label htmlFor="costPrice">Cost Price</label>
                                     <input type="number " name='costPrice' id='costPrice' value={formValues.costPrice} onChange={handleInput}/>
                                     { <span className='form-field-error'>{ formErrors.costPrice }</span> }
+                                </div>
+                                <div className={styles.formField}>
+                                    <label htmlFor="weight">Weight</label>
+                                    <input type="text " name='weight' id='weight' value={formValues.weight} onChange={handleInput}/>
+                                    { <span className='form-field-error'>{ formErrors.weight }</span> }
                                 </div>
                                 <div className={styles.formField}>
                                     <label htmlFor="discount">Discount</label>

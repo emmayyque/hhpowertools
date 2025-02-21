@@ -34,27 +34,6 @@ const BillingDetails = ({ billing }) => {
     setIsLoading(false)
   }, 50);
 
-  const shippingEstimateHandler = async (e) => {
-    const region = e.target.value
-    const resp = await fetch(`${baseURL}/api/shippingfee/getonebyregion/${region}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-
-    const json = await resp.json()
-
-    if (json.success) {
-      data.setShippingCost(json.data.fee)
-    } else {
-      console.log(json.error)
-    }
-
-    // const { name, value } = e.target
-    // console.log(name, value)
-    billing.setFormValues({ ...billing.formValues, state: region })
-  }
 
   const inputHandler = (e) => {
     const { name, value } = e.target
@@ -110,7 +89,7 @@ const BillingDetails = ({ billing }) => {
           <div className="form-group gap1">
             <div className="form-field">
               <label htmlFor="state">State</label>
-              <select name="state" id="state" value={ billing.formValues.state } onChange={shippingEstimateHandler}>
+              <select name="state" id="state" value={ billing.formValues.state } onChange={ inputHandler }>
                 <option value="0" disabled>Select State</option>
                 {
                   states && states.map((item, index) => (

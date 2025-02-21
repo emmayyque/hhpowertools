@@ -30,13 +30,21 @@ const ProductCard = (props) => {
     const addToCartHandler = (e) => {
         e.preventDefault()
         let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+        let itemWeight = Number(props.product.weight.split(" ")[0])
+        let weightUnit = props.product.weight.split(" ")[1]
+
+        if (weightUnit == 'g') {
+            itemWeight /= 1000
+        }
         
         let cartItem = {
             id: `${props.product._id}`,
             name: props.product.name,
             imageUrl: baseURL + props.product.images[0].imageUrl,
             price: getDiscountedPrice(props.product.costPrice, props.product.discount),
-            quantity: 1
+            quantity: 1,
+            weight: itemWeight
         }
 
         cart.push(cartItem)
