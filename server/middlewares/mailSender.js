@@ -16,7 +16,6 @@ const transporter = nodemailer.createTransport(
 )
 
 const sendMail = async (to, subject, message) => {
-    
     try {
         let info = await transporter.sendMail({
             from: process.env.NM_USER, // Ensure 'from' is set
@@ -24,9 +23,6 @@ const sendMail = async (to, subject, message) => {
             subject: subject,
             html: message
         });
-
-        console.log("Message sent: %s", info.messageId);
-        console.log("Response: ", info);
     } catch (error) {
         console.error("Error sending email:", error);
     }
