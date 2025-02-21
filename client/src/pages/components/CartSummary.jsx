@@ -6,7 +6,7 @@ const baseURL = import.meta.env.VITE_NODE_URL
 
 const CartSummary = (props) => {
     
-    const getShippingCosts = async () => {
+    const getRegions = async () => {
         const resp = await fetch(`${baseURL}/api/shippingfee/getall`, {
         method: "GET",
         headers: {
@@ -68,7 +68,7 @@ const CartSummary = (props) => {
     const checkoutClickHandler = (e) => {
         e.preventDefault()
         if (getTotal() > 0) {
-            navigate('/Shop/Checkout')
+            navigate('/shop/checkout')
         } else {
             setResponse({
                 status: 'error',
@@ -80,7 +80,7 @@ const CartSummary = (props) => {
     const [ states, setStates ] = useState([]);
 
     useEffect(() => {
-        getShippingCosts()
+        getRegions()
     }, [])
 
 
@@ -96,17 +96,11 @@ const CartSummary = (props) => {
         })
     }
 
-    const getShippingCost = (e) => {
-        let id = e.target.value
-        // data.getShippingEstimate(id)
-    }    
-
     const initialValues = { state: '' }
     const [ formValues, setFormValues ] = useState({...initialValues})
     const inputHandler = (e) => {
         e.preventDefault()
         const { name, value } = e.target
-        console.log(formValues)
         setFormValues({...formValues, [name]: value})
     }
     

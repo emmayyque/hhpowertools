@@ -52,6 +52,8 @@ const OrderSummary = ({ billing }) => {
             }))
 
             setOrderItems(updatedOrderItems)
+        } else {
+            setOrderItems([])
         }
     }, [cartItems])
 

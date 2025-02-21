@@ -8,8 +8,11 @@ const baseURL = import.meta.env.VITE_NODE_URL
 
 const Header = () => {
   const data = useContext(UserContext)
+  const [ user, setUser ] = useState(null)
+
   useEffect(() => {
     getPendingOrdersCount()
+    getUser()
   }, [])
 
   const [ pendingOrdersCount, setPendingOrdersCount ] = useState(0)
@@ -33,17 +36,39 @@ const Header = () => {
         console.log(json.error)
       }
     }
+  }
 
+  const getUser = async () => {
+    const token = localStorage.getItem("token")
+    if (token) {
+      const resp = await fetch(`${baseURL}/api/auth/getuser`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'auth-token': token
+        }
+      })
+
+      const json = await resp.json()
+      console.log(resp)
+
+      if (json.success) {
+        console.log(json.data)
+        setUser(json.data)
+      } else {
+        console.log(json.error)
+      }
+    }
   }
 
   return (
     <div className={`${styles.dHeader} ${styles.row}`}>
       <div className={styles.column}>
         <h3>Dashboard</h3>
-        <h4>Welcome, { data.user && data.user.username }</h4>
+        <h4>Welcome, { user && user.username }</h4>
       </div>
       <div className={`${styles.row} ${styles.gap1}`}>
-        <p>{ data.user && data.user.firstName }</p>
+        <p>{ user && user.firstName + ' ' + user.lastName }</p>
         <Link to={"/Admin/Dashboard/Profile"}><Icons.FaUser className={styles.icon2} /></Link>
         <Link to={"/Admin/Dashboard/Orders"}>
           {
