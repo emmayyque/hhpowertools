@@ -79,8 +79,6 @@ const OrderSummary = ({ billing }) => {
         })
 
         const json = await resp.json()
-        console.log(resp)
-        console.log(json)
 
         if (json.success) {
             setResponse({ orderNo: json.orderNo })

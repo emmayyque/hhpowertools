@@ -8,18 +8,21 @@ const Miscellaneous = () => {
 
     useEffect(() => {
         document.title = "HH Power Tools | Dashboard"
-        getShippingCosts()
+        getRegionFees()
+        getWeightFees()
         getSliderBanners()
         getHomeBanners()
         getShopBanner()
     }, [])
 
-    const [ shippingCosts, setShippingCosts ] = useState([])
-    const [ shippingCost, setShippingCost ] = useState(null)
+    const [ regionFees, setRegionFees ] = useState([])
+    const [ regionFee, setRegionFee ] = useState(null)
+    const [ weightFees, setWeightFees ] = useState([])
+    const [ weightFee, setWeightFee ] = useState(null)
     const [ idFromDb, setIdFromDb ] = useState()
     const [ response, setResponse ] = useState({})
 
-    const getShippingCosts = async () => {
+    const getRegionFees = async () => {
         const resp = await fetch(`${baseURL}/api/shippingfee/getall`, {
             method: "GET",
             headers: {
@@ -30,13 +33,13 @@ const Miscellaneous = () => {
         const json = await resp.json()
 
         if (json.success) {
-            setShippingCosts(json.data)
+            setRegionFees(json.data)
         } else {
             console.log(json)
         }
     }
 
-    const getShippingCost = async (e) => {
+    const getRegionFee = async (e) => {
         const id = e.target.value
         if (id != 0) {
             const resp = await fetch(`${baseURL}/api/shippingfee/getone/${id}`, {
@@ -50,21 +53,21 @@ const Miscellaneous = () => {
     
             if (json.success) {
                 setIdFromDb(json.data._id)
-                setShippingCost(json.data.fee)
+                setRegionFee(json.data.fee)
             } else {
                 console.log(json)
             }
         } 
     }
 
-    const shippingInputHandler = (e) => {
+    const regionInputHandler = (e) => {
         const { value } = e.target
-        setShippingCost(value)
+        setRegionFee(value)
     }
 
-    const editShippingCostHandler = async (e) => {
+    const editRegionFeeHandler = async (e) => {
         e.preventDefault()
-        if (idFromDb != null && shippingCost != null) {
+        if (idFromDb != null && regionFee != null) {
             const token = localStorage.getItem("token")
             if (token) {
                 const resp = await fetch(`${baseURL}/api/shippingfee/update/${idFromDb}`, {
@@ -74,7 +77,90 @@ const Miscellaneous = () => {
                         "auth-token": token
                     },
                     body: JSON.stringify({
-                        fee: shippingCost
+                        fee: regionFee
+                    })
+                })
+    
+                const json = await resp.json()
+    
+                if (json.success) {
+                    setResponse({
+                        message: json.message
+                    })
+                } else {
+                    console.log(json)
+                }
+    
+                setTimeout(() => {
+                    setResponse({})
+                }, 4000)
+            }
+        }
+    }
+
+
+    const getWeightFees = async () => {
+        const token = localStorage.getItem("token")
+        if (token) {
+            const resp = await fetch(`${baseURL}/api/weightfee/getall`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "auth-token": token
+                }
+            })
+    
+            const json = await resp.json()
+    
+            if (json.success) {
+                setWeightFees(json.data)
+            } else {
+                console.log(json)
+            }
+        }
+    }
+
+    const getWeightFee = async (e) => {
+        const id = e.target.value
+        const token = localStorage.getItem("token")
+        if (id != 0 && token) {
+            const resp = await fetch(`${baseURL}/api/weightfee/getone/${id}`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "auth-token": token
+                }
+            })
+    
+            const json = await resp.json()
+    
+            if (json.success) {
+                setIdFromDb(json.data._id)
+                setWeightFee(json.data.fee)
+            } else {
+                console.log(json)
+            }
+        } 
+    }
+
+    const rangeInputHandler = (e) => {
+        const { value } = e.target
+        setWeightFee(value)
+    }
+
+    const editWeightFeeHandler = async (e) => {
+        e.preventDefault()
+        if (idFromDb != null && weightFee != null) {
+            const token = localStorage.getItem("token")
+            if (token) {
+                const resp = await fetch(`${baseURL}/api/weightfee/update/${idFromDb}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "auth-token": token
+                    },
+                    body: JSON.stringify({
+                        fee: weightFee
                     })
                 })
     
@@ -358,16 +444,16 @@ const Miscellaneous = () => {
     <div className={`${styles.row} ${styles.gap2}`}>
         <div className={`${styles.dPanel}`}>
             <div className={`${styles.row} ${styles.dActions}`}>
-                <h2 className={styles.dPanelHeading}>Shipping Costs</h2>
+                <h2 className={styles.dPanelHeading}>Region Costs</h2>
             </div>
             <div className={`${styles.dPanelBody}`}>
                 <form action="" className={`${styles.column} ${styles.gap1} ${styles.alignEnd}`}>
                     <div className={`${styles.formField} form-field`}>
                         <label htmlFor="">Shipping Region</label>
-                        <select name="region" id="region" onChange={getShippingCost} defaultValue={0}>
+                        <select name="region" id="region" onChange={getRegionFee} defaultValue={0}>
                             <option value="0" disabled >Select Region</option>
                             {
-                                shippingCosts && shippingCosts.map((region, index) => (
+                                regionFees && regionFees.map((region, index) => (
                                     <option value={`${region._id}`} key={index} >{region.region}</option>
                                 ))
                             }
@@ -375,11 +461,39 @@ const Miscellaneous = () => {
                     </div>
                     <div className={`${styles.formField} form-field`}>
                         <label htmlFor="fee">Fee/Cost</label>
-                        <input type="number" name='fee' value={shippingCost} onChange={shippingInputHandler} />
+                        <input type="number" name='fee' value={regionFee} onChange={regionInputHandler} />
                     </div>
                     
                     <div className={`${styles.column} ${styles.actions}`}>
-                        <button className={styles.btn2} onClick={editShippingCostHandler}>Update Fee</button>
+                        <button className={styles.btn2} onClick={editRegionFeeHandler}>Update Fee</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div className={`${styles.dPanel}`}>
+            <div className={`${styles.row} ${styles.dActions}`}>
+                <h2 className={styles.dPanelHeading}>Weight Costs</h2>
+            </div>
+            <div className={`${styles.dPanelBody}`}>
+                <form action="" className={`${styles.column} ${styles.gap1} ${styles.alignEnd}`}>
+                    <div className={`${styles.formField} form-field`}>
+                        <label htmlFor="">Weight Range</label>
+                        <select name="range" id="range" onChange={getWeightFee} defaultValue={0}>
+                            <option value="0" disabled >Select Range</option>
+                            {
+                                weightFees && weightFees.map((item, index) => (
+                                    <option value={`${item._id}`} key={index} >{item.range}</option>
+                                ))
+                            }
+                        </select>
+                    </div>
+                    <div className={`${styles.formField} form-field`}>
+                        <label htmlFor="fee">Fee/Cost</label>
+                        <input type="number" name='fee' value={weightFee} onChange={rangeInputHandler} />
+                    </div>
+                    
+                    <div className={`${styles.column} ${styles.actions}`}>
+                        <button className={styles.btn2} onClick={editWeightFeeHandler}>Update Fee</button>
                     </div>
                 </form>
             </div>
