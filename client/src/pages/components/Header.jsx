@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import * as Icons from "react-icons/fa6";
 import Logo from '../../assets/images/logo3-white.png'
 import MobLogo from '../../assets/images/logo3-white-mob.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CartContext from '../../context/cart/CartContext';
 import CategoryContext from '../../context/categories/CategoryContext';
 import ProductContext from '../../context/products/ProductContext';
@@ -16,6 +16,7 @@ const Header = (props) => {
     const cartData = useContext(CartContext)
     const catData = useContext(CategoryContext)
     const prodData = useContext(ProductContext)
+    const navigate = useNavigate()
     
     const [ isLoading, setIsLoading ] = useState(true)
 
@@ -214,6 +215,13 @@ const Header = (props) => {
     
     const [ filteredProducts, setFilteredProducts ] = useState(null)
 
+    const productViewHandler = (e) => {
+        e.preventDefault()
+        const name = e.target.closest('.sritem').id
+        navigate(`/shop/product/${name.split(" ").join("-")}`)   
+        setSearchValues({...initialValues})
+        setFilteredProducts(null)
+    }
     
   return (
     <>
@@ -222,7 +230,7 @@ const Header = (props) => {
             <div className="search-results">
                 {
                     filteredProducts.length > 0 ? filteredProducts.map((product, index) => (
-                        <div className="sritem row gap2" key={index}>
+                        <div className="sritem row gap2" key={index} onClick={productViewHandler} id={product.name}>
                             <div className="srimg">
                                 <img src={`${baseURL}${product.images[0].imageUrl}`} alt="" />
                             </div>
