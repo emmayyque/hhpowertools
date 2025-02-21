@@ -10,10 +10,8 @@ import { Route, Router, Routes, useLocation, useParams } from 'react-router-dom'
 const baseURL = import.meta.env.VITE_NODE_URL
 
 const Shop = () => {
-  let location = useLocation()
   let params = useParams()
   
-  const [ products, setProducts ] = useState([])
   const [ topRatedProducts, setTopRatedProducts ] = useState([])
   const [ showByCategory, setShowByCategory ] = useState(0)
   
@@ -22,34 +20,7 @@ const Shop = () => {
     document.title = "HH Power Tools | Shop"
     getTopRatedProducts()
   }, [])
-  useEffect(() => {
-    document.title = "HH Power Tools | Shop"
-    let url = `${baseURL}/products`
-    if (params.category) {
-      let categoryId = params.category
-      getProductsByCategoryName('a')
-    } else {
-      getProducts()
-    }
-
-    getTopRatedProducts()
-  }, [params])
-
-  const getProducts = async () => {
-    const resp = await fetch(`${baseURL}/api/product/getall`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-
-    const json = await resp.json()
-    if (json.success) {
-        setProducts(json.data)
-    } else {
-        console.log(json.error)
-    }
-  }
+  
 
   const getTopRatedProducts = async () => {
     const resp = await fetch(`${baseURL}/api/product/getTopRatedProducts`, {
@@ -67,21 +38,6 @@ const Shop = () => {
     }
   } 
 
-  const getProductsByCategoryName = async (name) => {
-    const resp = await fetch(`${baseURL}/api/product/getbycategoryname/${name}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-
-    const json = await resp.json()
-    if (json.success) {
-        setProducts(json.data)
-    } else {
-        console.log(json.error)
-    }
-  }
 
   const options = [
       { label: 'View All', value: ''}
@@ -97,7 +53,9 @@ const Shop = () => {
           <Panel title="Top Rated Products" option={options} data={topRatedProducts}/>
         </div>
         <div className="right column gap2">
-          <Banner2 />          
+          {
+            !params.category && <Banner2 />          
+          }
           
           <Routes>
             <Route path='/' element={ <Store /> } />

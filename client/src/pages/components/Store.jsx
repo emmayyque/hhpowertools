@@ -37,6 +37,7 @@ const Store = () => {
       if (params.category && sortingFilter == 0) {
         const category = toCapitalCase(params.category)
         getProductsByCategoryName(category)
+        document.title = `HH Power Tools | ${category}`
       } else {
         if (sortingFilter == 0) {
           getProducts()
@@ -205,7 +206,7 @@ const Store = () => {
   return (
     isLoading ? <Loader /> :
     <div className='store'>
-      <SectionLabel heading="Shop" count={products.length} features={"Yes"} setSortingFilter={setSortingFilter} />
+      <SectionLabel heading={params.category ? toCapitalCase(params.category) : "Shop" } count={products.length} features={"Yes"} setSortingFilter={setSortingFilter} />
       <div className="products-area row">
         {
             currentProducts && currentProducts.map((item, index) => (
