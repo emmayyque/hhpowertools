@@ -221,6 +221,7 @@ const Header = (props) => {
         navigate(`/shop/product/${name.split(" ").join("-")}`)   
         setSearchValues({...initialValues})
         setFilteredProducts(null)
+        mobSearchBarHandler()
     }
     
   return (
