@@ -50,10 +50,8 @@ const Header = () => {
       })
 
       const json = await resp.json()
-      console.log(resp)
 
       if (json.success) {
-        console.log(json.data)
         setUser(json.data)
       } else {
         console.log(json.error)
