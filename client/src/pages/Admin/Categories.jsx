@@ -287,6 +287,9 @@ const Categories = () => {
                 })
     
                 const json = await resp.json()
+                console.log(resp)
+                console.log(json)
+
                 if (json.success) {
                     setResponse({
                         message: json.message
