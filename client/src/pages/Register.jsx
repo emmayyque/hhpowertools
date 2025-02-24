@@ -100,7 +100,7 @@ const Register = () => {
         message: json.message
       })
 
-      navigate("/Login")
+      loginUser()
     } else {
       setResponse({
         error: json.error
@@ -112,6 +112,35 @@ const Register = () => {
     }, 4000);
   }
 
+
+  const loginUser = async () => {
+    const resp = await fetch(`${baseURL}/api/auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: formValues.username,
+        password: formValues.password
+      })
+    })
+
+    const json = await resp.json();
+
+    if (json.success) {
+      
+      setResponse({})
+      localStorage.setItem("token", json.authToken)
+      if (json.role == 2) {
+        navigate('/account')
+      } else {
+        navigate('/')
+      }
+
+    } else {
+      navigate("/login")
+    }
+  }
   
   const [ response, setResponse ] = useState({})
 

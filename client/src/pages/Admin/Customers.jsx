@@ -90,6 +90,11 @@ const Customers = () => {
         }
     }
 
+    const dateFormatter = (dateString) => {
+        const date = new Date(dateString)
+        return date.toLocaleString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true })
+    }
+
   return (
     isLoading ? '' :
     <div className={styles.dPanel}>
@@ -123,8 +128,8 @@ const Customers = () => {
                                     <td>{customer.email}</td>
                                     <td>{customer.username}</td>
                                     <td>{customer.phone}</td>
-                                    <td>{customer.createdAt}</td>
-                                    <td>{customer.updatedAt}</td>
+                                    <td>{dateFormatter(customer.createdAt)}</td>
+                                    <td>{dateFormatter(customer.updatedAt)}</td>
                                     <td className={`${styles.row} ${styles.gap0}`}>
                                         <a href="" className={`${styles.btn} ${styles.dangerBtn}`} id={customer._id} onClick={deleteHandler} name='deleteBtn'>Delete</a>
                                     </td>

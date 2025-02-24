@@ -187,7 +187,7 @@ router.get(
                 return res.status(401).json({ success: false, error: "Not authorized to access" })
             }
             
-            const orderItems = await Order.findById(req.params.id).select("orderItems").populate("orderItems.product", "name costPrice discount")
+            const orderItems = await Order.findById(req.params.id).select("orderItems").populate("orderItems.product", "name costPrice discount images")
             return res.status(200).json({ success: true, data: orderItems })
             
         } catch (error) {

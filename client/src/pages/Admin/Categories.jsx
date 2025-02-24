@@ -341,7 +341,10 @@ const Categories = () => {
 
     const [ response, setResponse ] = useState({})
 
-
+    const dateFormatter = (dateString) => {
+        const date = new Date(dateString)
+        return date.toLocaleString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true })
+    }
 
   return (
     isLoading ? '' :
@@ -414,8 +417,8 @@ const Categories = () => {
                                             </div>
                                         </td>
                                         <td>{category.name}</td>
-                                        <td>{category.createdAt}</td>
-                                        <td>{category.updatedAt}</td>
+                                        <td>{dateFormatter(category.createdAt)}</td>
+                                        <td>{dateFormatter(category.updatedAt)}</td>
                                         <td className={`${styles.row} ${styles.gap0}`}>
                                             <a href="" className={`${styles.btn} ${styles.primaryBtn}`} id={category._id} onClick={showPanel} name='editBtn'>Edit</a>
                                             <a href="" className={`${styles.btn} ${styles.dangerBtn}`} id={category._id} onClick={showPanel} name='deleteBtn'>Delete</a>

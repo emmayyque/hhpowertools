@@ -336,18 +336,17 @@ const Header = (props) => {
                         <span>Rs.{ getFormat(getCartTotal()) }</span>
                     </div>
                     
-                    <Link to={"/shop"}><Icons.FaShop className='icon mob-icon'/></Link>
+                    <Link to={"/shop"}><Icons.FaShop className='icon'/></Link>
                 </div>
-                <Link to="/shop"  className='btn1 row gap1'>
-                    <Icons.FaBagShopping className='icon'/>
-                    <span>Go To Shop</span>
-                </Link>
             </div>
         </div>
         <div className="navbar">
             <ul className='row'>
                 <li>
                     <Link to={'/'}>Home</Link>
+                </li>
+                <li>
+                    <Link to={'/shop'}>Shop</Link>
                 </li>
                 {
                     catData.categories && (catData.categories).map((category, index) => (
@@ -362,6 +361,9 @@ const Header = (props) => {
             <ul className='column align-start'>
                 <li>
                     <Link to={'/'}>Home</Link>
+                </li>
+                <li>
+                    <Link to={'/shop'}>Shop</Link>
                 </li>
                 {
                     catData.categories && (catData.categories).map((category, index) => (

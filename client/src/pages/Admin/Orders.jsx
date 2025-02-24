@@ -336,6 +336,10 @@ const Orders = () => {
         }
     }
 
+    const dateFormatter = (dateString) => {
+        const date = new Date(dateString)
+        return date.toLocaleString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true })
+    }
     
   return (
     isLoading ? '' :
@@ -374,6 +378,7 @@ const Orders = () => {
                         <thead>
                             <tr>
                                 <th>Sr.</th>
+                                <th>Product</th>
                                 <th>Name</th>
                                 <th>Quantity</th>
                                 <th>Unit Price</th>
@@ -385,6 +390,11 @@ const Orders = () => {
                                 orderItems && orderItems.map((item, index) => (
                                     <tr key={index}>
                                         <td>{ index + 1 }</td>
+                                        <td>
+                                            <div className={styles.tableImage}>
+                                                <img src={ baseURL + item.product.images[0].imageUrl } alt={item.product.name} />
+                                            </div>
+                                        </td>
                                         <td>{ item.product.name }</td>
                                         <td>{ item.quantity }</td>
                                         <td>Rs. { getFormat( getDiscountedPrice(item.product.costPrice, item.product.discount)) }</td>
@@ -439,7 +449,7 @@ const Orders = () => {
                                                 { order.status == 1 ? 'Pending' : order.status == 2 ? 'Approved' : order.status == 3 ? 'Delivered' : order.status == 0 ? 'Declined' : '' }
                                             </span>
                                         </td>
-                                        <td>{ order.createdAt }</td>
+                                        <td>{ dateFormatter(order.createdAt) }</td>
                                         <td className={`${styles.row} ${styles.gap0}`}>
                                             {
                                                 order.status == 1 ? 

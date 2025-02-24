@@ -111,6 +111,11 @@ const Reviews = () => {
 
     const [response, setResponse] = useState({})
 
+    const dateFormatter = (dateString) => {
+        const date = new Date(dateString)
+        return date.toLocaleString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true })
+    }
+
   return ( 
     isLoading ? '' :
     <>
@@ -158,7 +163,7 @@ const Reviews = () => {
                                         <td>{ review.product && review.product.name }</td>
                                         <td>{ review.name }</td>
                                         <td>{ review.email }</td>
-                                        <td>{ review.createdAt }</td>
+                                        <td>{ dateFormatter(review.createdAt) }</td>
                                         <td className={`${styles.row} ${styles.gap0}`}>
                                             <a href="" className={`${styles.btn} ${styles.dangerBtn}`} id={ review._id } onClick={showPanel}>Delete</a>
                                         </td>

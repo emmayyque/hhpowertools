@@ -665,6 +665,11 @@ const Products = () => {
     
     const [ response, setResponse ] = useState({})
     
+    const dateFormatter = (dateString) => {
+        const date = new Date(dateString)
+        return date.toLocaleString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true })
+    }
+
   return (
     isLoading ? '' :
     <>
@@ -874,8 +879,8 @@ const Products = () => {
                                     <td>
                                         <span className={`${styles.badge} ${ product.isActive == 1 ? `${styles.successBadge}` : `${styles.warningBadge}`}`}>{ product.isActive == 1 ? 'True' : 'False'}</span>
                                     </td>
-                                    <td>{ product.createdAt }</td>
-                                    <td>{ product.updatedAt }</td>
+                                    <td>{ dateFormatter(product.createdAt) }</td>
+                                    <td>{ dateFormatter(product.updatedAt) }</td>
                                     <td className={`${styles.column} ${styles.gap0}`}>
                                         <a href="" className={`${styles.btn} ${product.isActive == 1 ? `${styles.warningBtn}` : `${styles.primaryBtn}`}`} id={ product._id } onClick={product.isActive == 1 ? inActiveHandler : activeHandler } >
                                             {product.isActive == 1 ? 'Inactive' : 'Active'}
