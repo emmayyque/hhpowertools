@@ -423,7 +423,8 @@ const Orders = () => {
                             <tr>
                                 <th>Order No</th>
                                 <th>Items</th>
-                                <th>Total Bill</th>
+                                <th>Total Bill</th>                                
+                                <th>Shipping Cost</th>
                                 <th>Customer</th>
                                 <th>Phone</th>
                                 <th>Address</th>
@@ -441,6 +442,7 @@ const Orders = () => {
                                             <a href="" className={`${styles.btn} ${styles.successBtn}`} id={order._id} name='viewBtn' onClick={showPanel}>View Items</a>
                                         </td>
                                         <td>Rs { getFormat(order.totalBill) }</td>
+                                        <td>Rs { getFormat(order.shippingFee) }</td>
                                         <td>{ order.customer && order.customer.firstName + ' ' + order.customer.lastName }</td>
                                         <td>{ order.customer && order.customer.phone }</td>
                                         <td>{ order.address && order.address.street + ' ' + order.address.area + ' ' + order.address.city }</td>

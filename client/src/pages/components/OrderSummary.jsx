@@ -75,7 +75,7 @@ const OrderSummary = ({ billing }) => {
                 state: billing.formValues.state,
                 zipCode: billing.formValues.zipCode,
                 orderItems: orderItems,
-                shippingCost: shippingCost,
+                shippingCost: weightFee + regionFee,
                 totalBill: getTotal()
             })
         })
@@ -110,7 +110,7 @@ const OrderSummary = ({ billing }) => {
                     state: billing.formValues.state,
                     zipCode: billing.formValues.zipCode,
                     orderItems: orderItems,
-                    shippingCost: shippingCost,
+                    shippingCost: weightFee + regionFee,
                     totalBill: getTotal()
                 })
             })
